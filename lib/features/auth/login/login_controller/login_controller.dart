@@ -1,5 +1,6 @@
 import 'package:atomshop/common/utils/app_utils.dart';
 import 'package:atomshop/features/bottom_nav_bar/bottom_nav_bar_view/bottom_nav_bar_view.dart';
+import 'package:atomshop/local_storage/local_storage_methods.dart';
 import 'package:atomshop/network/network_manager/network_manager.dart';
 import 'package:atomshop/network/urls/app_urls.dart';
 import 'package:get/get.dart';
@@ -23,6 +24,10 @@ class LoginController extends GetxController {
       AppUtils.hideLoading();
       // Check if login was successful and return the user data
       if (response['success'] == true) {
+        LocalStorageMethods.instance
+            .writeUserApiToken(response["data"]["token"]);
+        LocalStorageMethods.instance
+            .writeUserName(response["data"]["user"]["name"]);
         Get.to(() => BottomNavPage());
         return response['data']; // Return user data and token
       } else {

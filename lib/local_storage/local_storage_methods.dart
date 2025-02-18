@@ -4,6 +4,15 @@ class LocalStorageMethods {
   LocalStorageMethods._();
   static final instance = LocalStorageMethods._();
 
+  Future<void> writeUserName(String name) async {
+    await Prefs.setString("user_name", name);
+  }
+
+  String? getUserName() {
+    String? name = Prefs.getString("user_name");
+    return name;
+  }
+
   Future<void> writeUserId(String id) async {
     await Prefs.setString("user_id", id);
   }
@@ -13,7 +22,7 @@ class LocalStorageMethods {
     return userID;
   }
 
-    Future<void> writeisFirstTimeOpen(bool value) async {
+  Future<void> writeisFirstTimeOpen(bool value) async {
     await Prefs.setBool("isFirstTimeOpen", value);
   }
 
@@ -38,5 +47,9 @@ class LocalStorageMethods {
 
   bool isThemeModeDark() {
     return Prefs.getBool("is_dark_mode") ?? false; // Default to light mode
+  }
+
+  Future<void> clearLocalStorage() async {
+    await Prefs.clear();
   }
 }

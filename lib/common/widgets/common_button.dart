@@ -24,6 +24,7 @@ class CommonButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           // backgroundColor: theme.primaryColor, // Adapt button color to theme
           shape: RoundedRectangleBorder(
+            
             borderRadius: BorderRadius.circular(12),
           ),
           padding: const EdgeInsets.symmetric(vertical: 16),
@@ -32,7 +33,7 @@ class CommonButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              text,style: AppTextStyles.buttonText,
+              text, style: AppTextStyles.buttonText,
               // style: theme.textTheme, // Get button text style from theme
             ),
             if (icon != null) ...[

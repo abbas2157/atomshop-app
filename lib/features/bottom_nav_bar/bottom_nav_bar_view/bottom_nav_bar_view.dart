@@ -1,28 +1,38 @@
 // Main Page with Bottom Navigation Bar
+import 'package:atomshop/common/constants/app_constants.dart';
 import 'package:atomshop/common/constants/image_constants.dart';
+import 'package:atomshop/common/widgets/common_button.dart';
+import 'package:atomshop/extenstion/padding_extension.dart';
 import 'package:atomshop/features/bottom_nav_bar/bottom_nav_bar_controller/bottom_nav_bar_controller.dart';
+import 'package:atomshop/features/cart/cart_view/cart_view.dart';
+import 'package:atomshop/features/cart/controller/cart_controller.dart';
 import 'package:atomshop/features/categories/view/categories_view.dart';
 import 'package:atomshop/features/home/home_view/home_view.dart';
+import 'package:atomshop/features/profile/view/profile_view.dart';
+import 'package:atomshop/features/wish_list/wish_list_view/wish_list_view.dart';
 import 'package:atomshop/style/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:badges/badges.dart' as badges;
 
 class BottomNavPage extends StatelessWidget {
   BottomNavPage({super.key});
   final BottomNavController _controller = Get.put(BottomNavController());
+  final CartController _cartController = Get.put(CartController());
 
   // List of Pages
   final List<Widget> _pages = [
     MyHomePage(),
     CategoriesView(),
-    CartPage(),
-    OrdersPage(),
-    ProfilePage(),
+    CartView(),
+    WishListView(),
+    ProfileView(),
   ];
 
   @override
   Widget build(BuildContext context) {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    _cartController.getCount();
 
     return Scaffold(
       body: Obx(() => _pages[_controller.currentIndex.value]),
@@ -65,13 +75,28 @@ class BottomNavPage extends StatelessWidget {
                   ),
                   label: "Categories"),
               BottomNavigationBarItem(
-                  icon: Image.asset(
-                    color: _controller.currentIndex.value == 2
-                        ? AppColors.secondaryDark
-                        : null,
-                    AppImages.mycart,
-                    height: 24,
-                    width: 24,
+                  icon: badges.Badge(
+                    // position: badges.BadgePosition.topEnd(top: 0, end: 0),
+                    badgeAnimation: badges.BadgeAnimation.slide(
+                        // disappearanceFadeAnimationDuration: Duration(milliseconds: 200),
+                        // curve: Curves.easeInCubic,
+                        ),
+                    showBadge: _cartController.showCartBadge.value,
+                    badgeStyle: badges.BadgeStyle(
+                      badgeColor: Colors.red,
+                    ),
+                    badgeContent: Text(
+                      _cartController.cartCount.value.toString(),
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    child: Image.asset(
+                      color: _controller.currentIndex.value == 2
+                          ? AppColors.secondaryDark
+                          : null,
+                      AppImages.mycart,
+                      height: 24,
+                      width: 24,
+                    ),
                   ),
                   label: "My Cart"),
               BottomNavigationBarItem(
@@ -99,32 +124,5 @@ class BottomNavPage extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class CartPage extends StatelessWidget {
-  const CartPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: Text("Cart Page"));
-  }
-}
-
-class OrdersPage extends StatelessWidget {
-  const OrdersPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: Text("Orders Page"));
-  }
-}
-
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: Text("Profile Page"));
   }
 }
