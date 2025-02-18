@@ -3,6 +3,7 @@ import 'package:atomshop/common/constants/image_constants.dart';
 import 'package:atomshop/features/bottom_nav_bar/bottom_nav_bar_controller/bottom_nav_bar_controller.dart';
 import 'package:atomshop/features/categories/view/categories_view.dart';
 import 'package:atomshop/features/home/home_view/home_view.dart';
+import 'package:atomshop/features/product_detail/myCart/my_cart_screen.dart';
 import 'package:atomshop/style/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,7 +16,7 @@ class BottomNavPage extends StatelessWidget {
   final List<Widget> _pages = [
     MyHomePage(),
     CategoriesView(),
-    CartPage(),
+    CartScreen(),
     OrdersPage(),
     ProfilePage(),
   ];

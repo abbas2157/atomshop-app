@@ -37,6 +37,7 @@ abstract class RouteNames {
   static const String areaToServeScreen = "/areaToServeScreen";
     static const String bottomBarScreen = "/bottomBarScreen";
       static const String notificationsScreen = "/notificationsScreen";
+      static const String myCartScreen = "/myCartScreen";
 
 
 }
