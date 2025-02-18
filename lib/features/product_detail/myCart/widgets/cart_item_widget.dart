@@ -36,6 +36,7 @@ class CartItemWidget extends StatelessWidget {
                           width: 140,
                           child: Text(item.name, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold))
                       ),
+
                       Checkbox(value: true, onChanged: (bool? value){},activeColor: AppColors.secondaryLight,)
                     ],
                   ),
