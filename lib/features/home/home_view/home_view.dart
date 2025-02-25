@@ -1,6 +1,7 @@
 import 'package:atomshop/features/categories/categories_controller/categories_controller.dart';
 import 'package:atomshop/features/featured_products/view/featured_products_widget.dart';
 import 'package:atomshop/features/home/widget/slider_widget.dart';
+import 'package:atomshop/features/profile_feature/view/profile_main.dart';
 import 'package:atomshop/main.dart';
 import 'package:atomshop/style/colors/app_colors.dart';
 import 'package:atomshop/style/text_style/text_style.dart';
@@ -59,7 +60,17 @@ class MyHomePageState extends State<MyHomePage> {
                     onPressed: () {},
                     icon: const Icon(Icons.search),
                   ),
-                  const CircleAvatar(child: Icon(Icons.person)),
+                  IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProfileMain()));
+                    },
+                    icon: const Icon(Icons.person),
+                  ),
+
+                  //const CircleAvatar(child: Icon(Icons.person)),
                 ],
               ),
             ),
