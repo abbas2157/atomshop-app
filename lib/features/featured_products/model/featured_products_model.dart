@@ -3,23 +3,24 @@ import 'package:flutter/material.dart';
 class LatestProductsModel {
   final int id;
   final String name;
-  final int price;
-  final String formattedPrice;
+  final String price;
+  // final String formattedPrice;
   final String image;
-  final String category;
-  final String brand;
-  final Color backgroundColor;
+  // final String category;
+  // final String brand;
+   final Color backgroundColor;
 
   LatestProductsModel({
     required this.id,
     required this.name,
     required this.price,
-    required this.formattedPrice,
+   // required this.formattedPrice,
     required this.image,
-    required this.category,
-    required this.brand,
+   // required this.category,
+   // required this.brand,
     required dynamic backgroundColor, // Hex String or Color
-  }) : backgroundColor = backgroundColor is String
+  }) 
+  : backgroundColor = backgroundColor is String
           ? _hexToColor(backgroundColor) // Convert Hex String to Color
           : backgroundColor as Color; // If already a Color, use it
 
@@ -40,11 +41,11 @@ class LatestProductsModel {
       id: json['id'],
       name: json['title'] ?? 'Unknown Product',
       price: json['price'],
-      formattedPrice: json['formatted_price'],
-      image: json['product_picture'],
-      category: json['category']['title'] ?? 'Unknown Category',
-      brand: json['brand']['title'] ?? 'Unknown Brand',
-      backgroundColor: "#F4F5FD", // Static light background color
+      // formattedPrice: json['formatted_price'],
+      image: json['picture'],
+      // category: json['category']['title'] ?? 'Unknown Category',
+      // brand: json['brand']['title'] ?? 'Unknown Brand',
+       backgroundColor: "#F4F5FD", // Static light background color
     );
   }
 }

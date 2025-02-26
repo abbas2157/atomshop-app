@@ -19,7 +19,7 @@ class QuantitySelector extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               IconButton(
-                onPressed: controller.decrement,
+                onPressed: null, //controller.decrement,
                 icon: Icon(Icons.remove, color: Colors.black),
               ),
               Padding(
@@ -30,7 +30,7 @@ class QuantitySelector extends StatelessWidget {
                 ),
               ),
               IconButton(
-                onPressed: controller.increment,
+                onPressed: null, // controller.increment,
                 icon: Icon(Icons.add, color: Colors.black),
               ),
             ],

@@ -5,7 +5,8 @@ abstract class RouteNames {
   static const String onboarding = "/onboarding";
   static const String bookinghistory = "/bookinghistory";
   static const String login = "/login";
-  static const String phoneNumberVerificationScreen = "/phoneNumberVerificationScreen";
+  static const String phoneNumberVerificationScreen =
+      "/phoneNumberVerificationScreen";
   static const String forgotpassword = "/forgotpassword";
   static const String paymentScreen = "/paymentScreen";
   static const String updateuserdetails = "/updateuserdetails";
@@ -35,8 +36,7 @@ abstract class RouteNames {
   static const String viewRouteOfRideMapScreen = "/viewRouteOfRideMapScreen";
   static const String driverDocumentsScreen = "/driverDocumentsScreen";
   static const String areaToServeScreen = "/areaToServeScreen";
-    static const String bottomBarScreen = "/bottomBarScreen";
-      static const String notificationsScreen = "/notificationsScreen";
-
-
+  static const String bottomBarScreen = "/bottomBarScreen";
+  static const String notificationsScreen = "/notificationsScreen";
+  static const String emailConfirmation = "/emailConfirmation";
 }

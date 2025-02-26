@@ -49,6 +49,8 @@ dependencies:
   animated_read_more_text: ^0.0.6
   fluttertoast: ^8.2.12
   badges: ^3.1.2
+  intl: ^0.20.2
+  pin_code_fields: ^8.0.1
 
 dev_dependencies:
   flutter_test:

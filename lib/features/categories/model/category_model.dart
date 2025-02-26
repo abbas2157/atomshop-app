@@ -10,6 +10,6 @@ class CategoryModel {
     id = json['id'];
     title = json['title'];
     picture = json['picture'];
-    categoryPicture = json['category_picture'];
+    categoryPicture = json['picture'];
   }
 }

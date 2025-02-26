@@ -1,4 +1,5 @@
 import 'package:atomshop/features/categories/categories_controller/categories_controller.dart';
+import 'package:atomshop/features/categories/category_wise_products/category_wise_products_view.dart';
 import 'package:atomshop/features/featured_products/view/featured_products_widget.dart';
 import 'package:atomshop/features/home/widget/slider_widget.dart';
 import 'package:atomshop/main.dart';
@@ -53,7 +54,7 @@ class MyHomePageState extends State<MyHomePage> {
               title: Row(
                 children: [
                   Text("AtomShop", style: AppTextStyles.headline1),
-                  ThemeSwitch(),
+                  // ThemeSwitch(),
                   const Spacer(),
                   IconButton(
                     onPressed: () {},
@@ -80,7 +81,7 @@ class MyHomePageState extends State<MyHomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Categories", style: AppTextStyles.headline2),
+                    Text("Categories", style: AppTextStyles.headline3),
                     TextButton(
                       onPressed: () {
                         _bottomNavController.changePage(1);
@@ -97,26 +98,44 @@ class MyHomePageState extends State<MyHomePage> {
               ),
             ),
 
+            // this widget is causing issue
             // Categories Grid
-            SliverPadding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              sliver: Obx(() {
-                if (_categoriesController.isLoading.value) {
-                  return SliverToBoxAdapter(child: _buildShimmerGrid());
-                }
-                if (_categoriesController.errorMessage.isNotEmpty) {
-                  return SliverToBoxAdapter(
-                      child: Center(
-                          child:
-                              Text(_categoriesController.errorMessage.value)));
-                }
-                return SliverGrid(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) {
-                      final category = _categoriesController.categories[index];
-                      return Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+          SliverPadding(
+  padding: EdgeInsets.symmetric(
+    horizontal: MediaQuery.of(context).size.width * 0.03,
+  ),
+  sliver: Obx(() {
+    if (_categoriesController.isLoading.value) {
+      return SliverToBoxAdapter(child: _buildShimmerGrid());
+    }
+    if (_categoriesController.errorMessage.isNotEmpty) {
+      return SliverToBoxAdapter(
+        child: Center(child: Text(_categoriesController.errorMessage.value)),
+      );
+    }
+
+    return SliverToBoxAdapter(
+      child: SizedBox(
+        height: 100, // Slightly increased for better spacing
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal, // Enable horizontal scrolling
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: _categoriesController.categories
+                .take(4) // Ensures max 4 categories are displayed
+                .map(
+                  (category) => Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 6),
+                    child: InkWell(
+                      onTap: () {
+                        Get.to(() => CategoryWiseProducts(
+                              id: category.id.toString(),
+                              name: category.title.toString(),
+                            ));
+                      },
+                      child: Container(
+                        width: 85, // Slightly wider for better padding
+                        padding: EdgeInsets.symmetric(vertical: 8),
                         decoration: BoxDecoration(
                           color: Color(0xFFD9D9D9),
                           borderRadius: BorderRadius.circular(12),
@@ -131,39 +150,37 @@ class MyHomePageState extends State<MyHomePage> {
                           children: [
                             Image.network(
                               category.categoryPicture ?? "",
-                              height: 40,
-                              width: 40,
+                              height: 45,
+                              width: 45,
+                              fit: BoxFit.cover,
                               errorBuilder: (context, error, stackTrace) =>
                                   Icon(Icons.image_not_supported, size: 40),
                             ),
-                            SizedBox(height: 5),
-                            SizedBox(
-                              width: 60, // Adjust width to prevent overflow
+                            SizedBox(height: 6),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 6),
                               child: Text(
                                 category.title ?? "",
-                                style: TextStyle(fontSize: 12),
                                 textAlign: TextAlign.center,
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 1,
+                                style: TextStyle(fontSize: 12),
                               ),
                             ),
                           ],
                         ),
-                      );
-                    },
-                    childCount: _categoriesController.categories.length > 4
-                        ? 4
-                        : _categoriesController.categories.length,
+                      ),
+                    ),
                   ),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    childAspectRatio: 1,
-                  ),
-                );
-              }),
-            ),
+                )
+                .toList(),
+          ),
+        ),
+      ),
+    );
+  }),
+),
+
 
             // Latest Products Section
             SliverPadding(
@@ -172,23 +189,16 @@ class MyHomePageState extends State<MyHomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Featured Products", style: AppTextStyles.headline2),
-                    // TextButton(
-                    //   onPressed: () {},
-                    //   child: Text(
-                    //     "See All",
-                    //     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    //         color: AppColors.secondaryLight,
-                    //         fontWeight: FontWeight.w600),
-                    //   ),
-                    // ),
+                    Text("Featured Products", style: AppTextStyles.headline3),
                   ],
                 ),
               ),
             ),
 
             SliverPadding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 16,
+              ),
               sliver: SliverToBoxAdapter(
                 child: FeaturedProductsWidget(),
               ),

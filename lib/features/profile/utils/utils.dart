@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:intl/intl.dart';
 
 Future<void> showLogoutDialog(BuildContext context, VoidCallback onConfirm) {
   return showDialog(
@@ -24,15 +25,23 @@ Future<void> showLogoutDialog(BuildContext context, VoidCallback onConfirm) {
   );
 }
 
-void showToastMessage(String message){
-Fluttertoast.showToast(
-        msg: message,
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-        timeInSecForIosWeb: 1,
-        
-        backgroundColor: Colors.black,
-        textColor: Colors.white,
-        fontSize: 16.0
-    );
+void showToastMessage(String message,{ToastGravity? gravity}) {
+  Fluttertoast.showToast(
+      msg: message,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: gravity ??ToastGravity.CENTER,
+      timeInSecForIosWeb: 1,
+      backgroundColor: Colors.black,
+      textColor: Colors.white,
+      fontSize: 16.0);
+}
+
+String formatAmount(String amount, {String currencySymbol = 'Rs: '}) {
+  final double _amount = double.parse(amount);
+  final formatter = NumberFormat.currency(
+    locale: 'en_PK', // You can change this based on your region
+    symbol: currencySymbol,
+    decimalDigits: 0, // Change this to 2 if you want decimal points
+  );
+  return formatter.format(_amount);
 }

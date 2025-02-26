@@ -22,21 +22,22 @@ class FeaturedProductsWidget extends StatelessWidget {
         return Center(child: Text("No featured products available"));
       }
       return GridView.builder(
-        padding: EdgeInsets.zero,
-        shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          childAspectRatio: 0.7,
-        ),
-        itemCount: controller.featuredProducts.length,
-        itemBuilder: (context, index) {
-          final product = controller.featuredProducts[index];
-          return ProductCard(product: product);
-        },
-      );
+  padding: EdgeInsets.zero,
+  shrinkWrap: true,
+  physics: NeverScrollableScrollPhysics(),
+  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+    maxCrossAxisExtent: 200, // Max width per item
+    crossAxisSpacing: 20,
+    mainAxisSpacing: 10,
+    childAspectRatio: 0.9, // Adjust ratio for responsiveness
+  ),
+  itemCount: controller.featuredProducts.length,
+  itemBuilder: (context, index) {
+    final product = controller.featuredProducts[index];
+    return ProductCard(product: product);
+  },
+);
+
     });
   }
 
@@ -69,71 +70,119 @@ class FeaturedProductsWidget extends StatelessWidget {
   }
 }
 
-class ProductCard extends StatelessWidget {
-  final LatestProductsModel product;
 
+class ProductCard extends StatefulWidget {
+  final LatestProductsModel product;
   const ProductCard({super.key, required this.product});
 
   @override
+  State<ProductCard> createState() => _ProductCardState();
+}
+
+class _ProductCardState extends State<ProductCard> {
+  bool isFavorite = false;
+
+  @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        InkWell(
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        double imageHeight = constraints.maxWidth * 0.5;
+        return GestureDetector(
           onTap: () {
-            Get.to(() => SingleProductDetailView(productId: product.id,));
+            Get.to(() => SingleProductDetailView(productId: widget.product.id));
           },
           child: Container(
-            height: 180,
-            padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: product.backgroundColor,
+              borderRadius: BorderRadius.circular(8),
+              color: Colors.white,
+              border: Border.all(color: Colors.grey.shade300),
             ),
+            padding: EdgeInsets.all(8),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
               children: [
-                Align(
-                  alignment: Alignment.topRight,
-                  child: CircleAvatar(
-                    radius: 20,
-                    backgroundColor: Colors.black.withOpacity(0.7),
-                    child:
-                        const Icon(Icons.favorite_border, color: Colors.white),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: SizedBox(
+                    height: imageHeight,
+                    child: Image.network(
+                      widget.product.image,
+                      fit: BoxFit.cover,
+                      loadingBuilder: (context, child, loadingProgress) {
+                        if (loadingProgress == null) return child;
+                        return Shimmer.fromColors(
+                          baseColor: Colors.grey[300]!,
+                          highlightColor: Colors.grey[100]!,
+                          child: Container(
+                            width: double.infinity,
+                            color: Colors.white,
+                          ),
+                        );
+                      },
+                      errorBuilder: (context, error, stackTrace) => Icon(
+                        Icons.image_not_supported,
+                        size: imageHeight * 0.5,
+                        color: Colors.grey,
+                      ),
+                    ),
                   ),
                 ),
-                Expanded(
-                  child: Image.network(
-                    product.image,
-                    fit: BoxFit.contain,
-                    errorBuilder: (context, error, stackTrace) => const Icon(
-                        Icons.image_not_supported,
-                        size: 100,
-                        color: Colors.grey),
+                SizedBox(height: 6),
+                Text(
+                  widget.product.name,
+                  style: AppTextStyles.headline3.copyWith(
+                    fontSize: constraints.maxWidth * 0.08, // Scalable text
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                SizedBox(height: 4),
+                Text(
+                  "Available on installments",
+                  style: AppTextStyles.normal.copyWith(
+                    fontSize: constraints.maxWidth * 0.07,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black,
+                  ),
+                ),
+                Text(
+                  "Advance: RS.${widget.product.price}",
+                  style: AppTextStyles.normal.copyWith(
+                    fontSize: constraints.maxWidth * 0.07,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.grey.shade700,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        isFavorite = !isFavorite;
+                      });
+                    },
+                    child: AnimatedSwitcher(
+                      duration: Duration(milliseconds: 300),
+                      transitionBuilder: (Widget child, Animation<double> animation) {
+                        return ScaleTransition(scale: animation, child: child);
+                      },
+                      child: Icon(
+                        isFavorite ? Icons.favorite : Icons.favorite_border,
+                        color: Colors.redAccent,
+                        size: constraints.maxWidth * 0.1, // Responsive icon size
+                        key: ValueKey<bool>(isFavorite),
+                      ),
+                    ),
                   ),
                 ),
               ],
             ),
           ),
-        ),
-        const SizedBox(height: 10),
-        Text(product.name,
-            style: AppTextStyles.headline3,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis),
-        const SizedBox(height: 4),
-        Text("Available On Installment",
-            style: AppTextStyles.bodyText1,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis),
-        Row(
-          children: [
-            Text(
-              "Advance : RS.${product.price}",
-              style: AppTextStyles.normal.copyWith(fontWeight: FontWeight.bold),
-            ),
-          ],
-        ),
-      ],
+        );
+      },
     );
   }
 }
+
+
