@@ -16,10 +16,10 @@ class FeaturedProductsController extends GetxController {
   Future<void> fetchFeaturedProducts() async {
     try {
       isLoading(true);
-      var response = await NetworkManager().getRequest('products/feature');
+      var response = await NetworkManager().getRequest('products');
 
       if (response['success'] == true) {
-        var products = response['data'] as List;
+        var products = response['data']['data'] as List;
         featuredProducts.value = products.map((json) => LatestProductsModel.fromJson(json)).toList();
       } else {
         throw Exception("Failed to load products");

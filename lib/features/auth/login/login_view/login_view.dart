@@ -5,7 +5,6 @@ import 'package:atomshop/common/widgets/logo.dart';
 import 'package:atomshop/extenstion/alignment_extension.dart';
 import 'package:atomshop/features/auth/auth_widget/terms_and_condi.dart';
 import 'package:atomshop/features/auth/auth_widget/lable_text.dart';
-import 'package:atomshop/features/auth/forget_password/view/email_confirmation.dart';
 import 'package:atomshop/features/auth/login/login_controller/login_controller.dart';
 import 'package:atomshop/features/auth/sign_up/sign_up_view/sign_up_view.dart';
 import 'package:atomshop/main.dart';
@@ -93,8 +92,6 @@ class LoginScreen extends StatelessWidget {
                   onPressed: () {
                     // Navigate to forgot password screen
                     // Implement your Forgot Password logic here
-                    // Implement your Sign Up logic here
-                    Get.to(() => EmailConfirmation());
                   },
                   child: Text(
                     'Forgot Password?',

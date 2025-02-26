@@ -12,5 +12,4 @@ class AppImages {
   static const String profile = "assets/images/profile.png";
   static const String emptyCart = "assets/images/empty.png";
   static const String profilePlaceholder = "assets/images/do-login.png";
-  static const String resetSuccess = "assets/images/reset_success.png";
 }

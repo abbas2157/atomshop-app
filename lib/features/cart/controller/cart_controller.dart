@@ -7,14 +7,11 @@ import 'package:get/get.dart';
 class CartController extends GetxController {
   final RxList<CartItemModel> cartItemsList = <CartItemModel>[].obs;
   final RxBool isLoading = false.obs;
-  RxString subtotal = "0".obs;
-  RxString total = "0".obs;
 
   void getCartItems() async {
     try {
       isLoading.value = true;
       cartItemsList.clear();
-      cartItemsList.refresh();
       Map<String, dynamic> payload = {
         "user_type": "guest",
         "guest_id": "GHD768GGYH",
@@ -24,8 +21,6 @@ class CartController extends GetxController {
         for (Map<String, dynamic> item in response['data']['cart']) {
           cartItemsList.add(CartItemModel.fromJson(item));
         }
-        subtotal.value =  response['data']['sub_total'];
-        total.value =  response['data']['total'];
 
         //showToastMessage(response['original']['message']);
       } else {
@@ -95,11 +90,9 @@ class CartController extends GetxController {
       Map<String, dynamic> payload = {
         "cart_id": id,
       };
-      var response = await NetworkManager().postRequest("cart/remove", payload);
+      var response = await NetworkManager().postRequest("cart/count", payload);
       if (response['original']['success'] == true) {
         showToastMessage(response['original']['message']);
-        getCartItems();
-        getCount();
       } else {
         throw Exception('Login failed: ${response['message']}');
       }
