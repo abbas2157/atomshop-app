@@ -1,0 +1,4 @@
+#Sat Feb 22 00:57:18 PKT 2025
+base.0=/Users/apple/flutterprojects/atomshop/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
