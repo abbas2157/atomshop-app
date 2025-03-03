@@ -1,14 +1,24 @@
+import 'package:atomshop/common/constants/app_constants.dart';
+import 'package:atomshop/common/widgets/logo.dart';
+import 'package:atomshop/extenstion/alignment_extension.dart';
+import 'package:atomshop/extenstion/padding_extension.dart';
 import 'package:atomshop/features/categories/categories_controller/categories_controller.dart';
 import 'package:atomshop/features/featured_products/view/featured_products_widget.dart';
 import 'package:atomshop/features/home/widget/slider_widget.dart';
-import 'package:atomshop/features/profile_feature/view/profile_main.dart';
-import 'package:atomshop/main.dart';
+import 'package:atomshop/features/language/controller/language_controller.dart';
+import 'package:atomshop/features/language/view/change_language_view.dart';
+import 'package:atomshop/features/promotions/view/promotions_view.dart';
+import 'package:atomshop/features/search/view/searh_view.dart';
+import 'package:atomshop/features/top_rated_products/view/top_rated_products_widget.dart';
 import 'package:atomshop/style/colors/app_colors.dart';
 import 'package:atomshop/style/text_style/text_style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../bottom_nav_bar/bottom_nav_bar_controller/bottom_nav_bar_controller.dart';
+import '../../brands/view/brands_view.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -23,6 +33,7 @@ class MyHomePageState extends State<MyHomePage> {
       Get.put(CategoriesController());
   final BottomNavController _bottomNavController =
       Get.put(BottomNavController());
+  final LanguageController _languageController = Get.put(LanguageController());
 
   @override
   void initState() {
@@ -41,172 +52,217 @@ class MyHomePageState extends State<MyHomePage> {
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
-      body: SafeArea(
-        child: CustomScrollView(
-          slivers: [
-            // Sliver AppBar
-            SliverAppBar(
-              floating: true,
-              pinned: false,
-              elevation: 0,
-              backgroundColor: Colors.transparent,
-              forceMaterialTransparency: true,
-              title: Row(
+      backgroundColor: Colors.grey.shade200,
+      appBar: AppBar(
+        forceMaterialTransparency: true,
+        centerTitle: false,
+        automaticallyImplyLeading: false,
+        title: logo(width: 80),
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(1), // Height of the border
+          child: Container(
+            color: Colors.grey.shade300, // Border color
+            height: 1, // Thickness of the border
+          ),
+        ),
+        // title: Text("AtomShop", style: AppTextStyles.headline1),
+        actions: [
+          Obx(
+            () => IconButton(
+              icon: Row(
                 children: [
-                  Text("AtomShop", style: AppTextStyles.headline1),
-                  ThemeSwitch(),
-                  const Spacer(),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.search),
+                  Text(
+                    _languageController.confirmedLanguage.value ==
+                            Language.English
+                        ? "English"
+                        : "اردو",
+                    style: AppTextStyles.bodyText1
+                        .copyWith(fontWeight: FontWeight.w500),
                   ),
-                  IconButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ProfileMain()));
-                    },
-                    icon: const Icon(Icons.person),
-                  ),
-
-                  //const CircleAvatar(child: Icon(Icons.person)),
+                  Icon(Icons.arrow_drop_down)
                 ],
               ),
+              onPressed: () {
+                Get.to(() => ChangeLanguageView());
+              },
             ),
-
-            // Carousel
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child:
-                    const HomePageSliderWidget(), // Use the dynamic slider here
+          ),
+        ],
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 15.h,
               ),
-            ),
-
-            // Categories Section
-            SliverPadding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-              sliver: SliverToBoxAdapter(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Categories", style: AppTextStyles.headline2),
-                    TextButton(
-                      onPressed: () {
-                        _bottomNavController.changePage(1);
-                      },
-                      child: Text(
-                        "View All",
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            color: AppColors.secondaryLight,
-                            fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                  ],
-                ),
+              SearchTextField(
+                controller: TextEditingController(),
+              ).paddingHorizontel(AppConstants.HorizontelPadding),
+              SizedBox(
+                height: 10.h,
               ),
-            ),
-
-            // Categories Grid
-            SliverPadding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              sliver: Obx(() {
-                if (_categoriesController.isLoading.value) {
-                  return SliverToBoxAdapter(child: _buildShimmerGrid());
-                }
-                if (_categoriesController.errorMessage.isNotEmpty) {
-                  return SliverToBoxAdapter(
-                      child: Center(
-                          child:
-                              Text(_categoriesController.errorMessage.value)));
-                }
-                return SliverGrid(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) {
-                      final category = _categoriesController.categories[index];
-                      return Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 4, vertical: 8),
-                        decoration: BoxDecoration(
-                          color: Color(0xFFD9D9D9),
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                            color: isDarkMode
-                                ? AppColors.appGreyColor
-                                : Color(0xffF4F5FD),
-                          ),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.network(
-                              category.categoryPicture ?? "",
-                              height: 40,
-                              width: 40,
-                              errorBuilder: (context, error, stackTrace) =>
-                                  Icon(Icons.image_not_supported, size: 40),
-                            ),
-                            SizedBox(height: 5),
-                            SizedBox(
-                              width: 60, // Adjust width to prevent overflow
-                              child: Text(
-                                category.title ?? "",
-                                style: TextStyle(fontSize: 12),
-                                textAlign: TextAlign.center,
-                                overflow: TextOverflow.ellipsis,
-                                maxLines: 1,
-                              ),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                    childCount: _categoriesController.categories.length > 4
-                        ? 4
-                        : _categoriesController.categories.length,
-                  ),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    childAspectRatio: 1,
-                  ),
-                );
-              }),
-            ),
-
-            // Latest Products Section
-            SliverPadding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-              sliver: SliverToBoxAdapter(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Featured Products", style: AppTextStyles.headline2),
-                    // TextButton(
-                    //   onPressed: () {},
-                    //   child: Text(
-                    //     "See All",
-                    //     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    //         color: AppColors.secondaryLight,
-                    //         fontWeight: FontWeight.w600),
-                    //   ),
-                    // ),
-                  ],
-                ),
+              const HomePageSliderWidget(),
+              SizedBox(
+                height: 10.h,
               ),
-            ),
+              //  _buildTagAndSeeAllButton(context),
 
-            SliverPadding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-              sliver: SliverToBoxAdapter(
-                child: FeaturedProductsWidget(),
+              // Categories Grid
+
+              _homePageCategories(isDarkMode)
+                  .paddingHorizontel(AppConstants.HorizontelPadding),
+
+              // Latest Products Section
+              Text("Featured Products", style: AppTextStyles.headline3)
+                  .alignTopLeft()
+                  .paddingHorizontel(AppConstants.HorizontelPadding),
+              SizedBox(
+                height: 5.h,
               ),
-            ),
-          ],
+              FeaturedProductsWidget()
+                  .paddingHorizontel(AppConstants.HorizontelPadding),
+              SizedBox(
+                height: 10.h,
+              ),
+              //// promotions
+              PromotionsView(),
+              SizedBox(
+                height: 10.h,
+              ),
+              Text("Top Rated Products", style: AppTextStyles.headline3)
+                  .alignTopLeft()
+                  .paddingHorizontel(AppConstants.HorizontelPadding),
+              SizedBox(
+                height: 5.h,
+              ),
+
+              /// top rated products section
+              TopRatedProductsWidget()
+                  .paddingHorizontel(AppConstants.HorizontelPadding),
+                   SizedBox(
+                height: 10.h,
+              ),
+              Text("Brands", style: AppTextStyles.headline3)
+                  .alignTopLeft()
+                  .paddingHorizontel(AppConstants.HorizontelPadding),
+                    SizedBox(
+                height: 5.h,
+              ),
+              BrandsView(),
+              SizedBox(height: 20.h,)
+            ],
+          ),
         ),
       ),
+    );
+  }
+
+  // Padding _buildTagAndSeeAllButton(BuildContext context) {
+  //   return Padding(
+  //     padding: EdgeInsets.symmetric(
+  //         horizontal: AppConstants.HorizontelPadding, vertical: 0),
+  //     child: Row(
+  //       crossAxisAlignment: CrossAxisAlignment.center,
+  //       children: [
+  //         Expanded(
+  //           child: Text(
+  //             "Categories",
+  //             style: AppTextStyles.headline3,
+  //           ),
+  //         ),
+  //         GestureDetector(
+  //           onTap: () => _bottomNavController.changePage(1),
+  //           child: Container(
+  //             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+  //             decoration: BoxDecoration(
+  //               borderRadius: BorderRadius.circular(6),
+  //               color: AppColors.secondaryLight.withOpacity(0.1),
+  //             ),
+  //             child: Text(
+  //               "see all",
+  //               style: Theme.of(context).textTheme.bodySmall!.copyWith(
+  //                   color: AppColors.secondaryLight,
+  //                   fontWeight: FontWeight.w500),
+  //             ),
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
+
+  Obx _homePageCategories(bool isDarkMode) {
+    return Obx(
+      () {
+        if (_categoriesController.isLoading.value) {
+          return _buildShimmerGrid();
+        }
+        if (_categoriesController.errorMessage.isNotEmpty) {
+          return Center(child: Text(_categoriesController.errorMessage.value));
+        }
+        return SizedBox(
+          height: Get.height * 0.15, // Responsive height (15% of screen height)
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            // padding: EdgeInsets.symmetric(
+            //     horizontal: Get.width * 0.03), // Responsive padding
+            // itemCount: _categoriesController.categories.length > 4
+            //     ? 4
+            //     : _categoriesController.categories.length,
+            itemCount: _categoriesController.categories.length,
+            itemBuilder: (context, index) {
+              final category = _categoriesController.categories[index];
+
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Card(
+                    color: Colors.white,
+                    elevation: 0, // Slightly stronger shadow for a richer look
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                          AppConstants.fieldsBorderRadius), // Rounded corners
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(Get.width *
+                          0.03), // Responsive padding inside the card
+                      child: Image.network(
+                        category.picture ?? "",
+                        height: Get.height *
+                            0.07, // Bigger image (7% of screen height)
+                        width:
+                            Get.height * 0.07, // Keeping width equal to height
+                        fit: BoxFit.cover, // Ensures image scales properly
+                        errorBuilder: (context, error, stackTrace) =>
+                            const Icon(Icons.image_not_supported,
+                                size: 50, color: Colors.grey),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                      height:
+                          Get.height * 0.007), // Spacing between image & text
+                  SizedBox(
+                    width: Get.width *
+                        0.2, // Responsive width to prevent text overflow
+                    child: Text(
+                      category.title ?? "",
+                      style: TextStyle(
+                        fontSize: Get.width * 0.035, // Responsive font size
+                        fontWeight: FontWeight.w500,
+                      ),
+                      textAlign: TextAlign.center,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                    ),
+                  ),
+                ],
+              );
+            },
+          ),
+        );
+      },
     );
   }
 
