@@ -13,6 +13,15 @@ class LocalStorageMethods {
     return name;
   }
 
+  Future<void> writeUserEmail(String mail) async {
+    await Prefs.setString("user_email", mail);
+  }
+
+  String? getUserEmail() {
+    String? name = Prefs.getString("user_email");
+    return name;
+  }
+
   Future<void> writeUserId(String id) async {
     await Prefs.setString("user_id", id);
   }
@@ -52,4 +61,32 @@ class LocalStorageMethods {
   Future<void> clearLocalStorage() async {
     await Prefs.clear();
   }
+
+  /////// search
+  static const String _recentSearchesKey = "recent_searches";
+
+  // Search History
+  Future<void> saveRecentSearch(String query) async {
+    List<String> searches = getRecentSearches();
+    searches.remove(query); // Avoid duplicates
+    searches.insert(0, query); // Add to top
+
+    if (searches.length > 10) {
+      searches = searches.sublist(0, 10); // Keep only 10 items
+    }
+
+    await Prefs.setStringList(_recentSearchesKey, searches);
+  }
+
+  List<String> getRecentSearches() =>
+      Prefs.getStringList(_recentSearchesKey) ?? [];
+
+  Future<void> clearRecentSearch(String query) async {
+    List<String> searches = getRecentSearches();
+    searches.remove(query);
+    await Prefs.setStringList(_recentSearchesKey, searches);
+  }
+
+  Future<void> clearAllRecentSearches() async =>
+      await Prefs.remove(_recentSearchesKey);
 }

@@ -9,6 +9,7 @@ import 'package:atomshop/features/language/controller/language_controller.dart';
 import 'package:atomshop/features/language/view/change_language_view.dart';
 import 'package:atomshop/features/promotions/view/promotions_view.dart';
 import 'package:atomshop/features/search/view/searh_view.dart';
+import 'package:atomshop/features/search/widgets/textfield.dart';
 import 'package:atomshop/features/top_rated_products/view/top_rated_products_widget.dart';
 import 'package:atomshop/style/colors/app_colors.dart';
 import 'package:atomshop/style/text_style/text_style.dart';
@@ -97,6 +98,10 @@ class MyHomePageState extends State<MyHomePage> {
                 height: 15.h,
               ),
               SearchTextField(
+                onTap: () {
+                  Get.to(()=>SearchView());
+                },
+                readOnly: true,
                 controller: TextEditingController(),
               ).paddingHorizontel(AppConstants.HorizontelPadding),
               SizedBox(
