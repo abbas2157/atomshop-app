@@ -2,6 +2,7 @@
 
 import 'package:atomshop/features/brands/controller/brands_controller.dart';
 import 'package:atomshop/features/brands/model/brands_model.dart';
+import 'package:atomshop/features/brands/view/brands_products.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
@@ -49,7 +50,11 @@ class BrandsView extends StatelessWidget {
         itemCount: 6,
         separatorBuilder: (_, __) => const SizedBox(width: 12),
         itemBuilder: (context, index) {
-          return ShimmerLoading(size: size);
+          return ShimmerLoading(
+            size: size,
+            height: 100,
+            borderRadius: 12,
+          );
         },
       ),
     );
@@ -65,7 +70,9 @@ class BrandCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {}, // Add navigation if needed
+      onTap: () {
+        Get.to(() => BrandProductsView(id: brand.id.toString(),brandName: brand.title.toString(),));
+      }, // Add navigation if needed
       child: Container(
         width: size,
         height: size,
@@ -79,7 +86,11 @@ class BrandCard extends StatelessWidget {
           fit: BoxFit.contain,
           width: size,
           height: size,
-          placeholder: (context, url) => ShimmerLoading(size: size),
+          placeholder: (context, url) => ShimmerLoading(
+            size: size,
+            height: 100,
+            borderRadius: 12,
+          ),
           errorWidget: (context, url, error) => const Icon(
             Icons.image_not_supported,
             size: 50,
@@ -94,7 +105,11 @@ class BrandCard extends StatelessWidget {
 class ShimmerLoading extends StatelessWidget {
   final double size;
 
-  const ShimmerLoading({super.key, required this.size});
+  const ShimmerLoading(
+      {super.key,
+      required this.size,
+      required int height,
+      required int borderRadius});
 
   @override
   Widget build(BuildContext context) {

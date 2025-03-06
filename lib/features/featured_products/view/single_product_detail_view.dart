@@ -3,11 +3,11 @@ import 'package:atomshop/common/constants/app_constants.dart';
 import 'package:atomshop/common/widgets/common_button.dart';
 import 'package:atomshop/common/widgets/loading.dart';
 import 'package:atomshop/features/cart/controller/cart_controller.dart';
+import 'package:atomshop/features/installment_calculator/view/calculator_view.dart';
 import 'package:atomshop/style/colors/app_colors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../controller/single_product_detail_controller.dart';
 import '../widgets/quantity_selector_button/quantity_selector_button.dart';
 
@@ -23,7 +23,6 @@ class SingleProductDetailView extends StatelessWidget {
     controller.fetchProductDetails(productId);
 
     return Scaffold(
-      // appBar: AppBar(backgroundColor: Colors.transparent,),
       body: Obx(() {
         if (controller.isLoading.value) {
           return SafeArea(
@@ -51,167 +50,237 @@ class SingleProductDetailView extends StatelessWidget {
         final product = controller.productDetail.value!;
 
         return Stack(
-          //  crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 🔹 Image Slider with smooth transition
-            //  IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back_ios)),
-
+            // Top section with image slider
             Container(
-              //  height: 400,
-              color: Color(0xFFD9D9D9),
+              color: const Color(0xFFF5F5F5), // Lighter background for top part
               child: Column(
                 children: [
                   SafeArea(
-                      bottom: false,
-                      right: false,
-                      left: false,
-                      child: SizedBox()),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(
-                        onPressed: () {
-                          Get.back();
-                        },
-                        icon: Icon(Icons.arrow_back_ios),
-                      ),
-                      CircleAvatar(
-                        radius: 20,
-                        backgroundColor: Colors.black,
-                        child: const Icon(Icons.favorite, color: Colors.red),
-                      ),
-                    ],
+                    bottom: false,
+                    right: false,
+                    left: false,
+                    child: const SizedBox(),
                   ),
-                  SizedBox(
-                    height: 10,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        IconButton(
+                          onPressed: () => Get.back(),
+                          icon: const Icon(Icons.arrow_back_ios),
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(
+                                Colors.white.withOpacity(0.8)),
+                            shape: MaterialStateProperty.all(CircleBorder()),
+                          ),
+                        ),
+                        CircleAvatar(
+                          radius: 20,
+                          backgroundColor: Colors.white,
+                          child:
+                              Icon(Icons.favorite, color: Colors.red.shade600),
+                        ),
+                      ],
+                    ),
                   ),
+                  const SizedBox(height: 10),
                   CarouselSlider(
                     options: CarouselOptions(
-                        height: 150,
-                        autoPlay: true,
-                        enlargeCenterPage: true,
-                        enableInfiniteScroll: true,
-                        onPageChanged: (index, reason) {
-                          controller.currentPage.value = index;
-                        }),
+                      height: 220,
+                      autoPlay: true,
+                      enlargeCenterPage: true,
+                      enableInfiniteScroll: true,
+                      viewportFraction: 0.85,
+                      onPageChanged: (index, reason) {
+                        controller.currentPage.value = index;
+                      },
+                    ),
                     items:
                         [product.picture, ...product.gallery].map((imageUrl) {
-                      return Image.network(
-                        imageUrl,
-                        width: double.infinity,
-                        // fit: BoxFit.cover,
-                        loadingBuilder: (context, child, loadingProgress) {
-                          if (loadingProgress == null) return child;
-                          return ShimmerLoading(height: 300, borderRadius: 12);
-                        },
-                        errorBuilder: (_, __, ___) => Container(
-                            height: 200,
-                            color: Colors.grey[300],
-                            child: const Icon(Icons.broken_image, size: 50)),
+                      return Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.1),
+                              spreadRadius: 1,
+                              blurRadius: 8,
+                              offset: Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.network(
+                            imageUrl,
+                            fit: BoxFit.contain,
+                            loadingBuilder: (context, child, loadingProgress) {
+                              if (loadingProgress == null) return child;
+                              return ShimmerLoading(
+                                  height: 220, borderRadius: 15);
+                            },
+                            errorBuilder: (_, __, ___) => Container(
+                              height: 220,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[300],
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: const Icon(Icons.broken_image, size: 50),
+                            ),
+                          ),
+                        ),
                       );
                     }).toList(),
                   ),
+                  const SizedBox(height: 15),
                   Container(
-                    margin: EdgeInsets.only(top: 10),
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.06),
+                          spreadRadius: 0,
+                          blurRadius: 5,
+                          offset: Offset(0, 1),
+                        ),
+                      ],
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: List.generate(
-                          [product.picture, ...product.gallery].length,
-                          (index) {
-                        return Container(
-                          width: 8.0,
-                          height: 8.0,
-                          margin: const EdgeInsets.symmetric(horizontal: 4.0),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: controller.currentPage.value == index
-                                ? AppColors.secondaryDark
-                                // ignore: deprecated_member_use
-                                : Colors.grey.withOpacity(0.5),
-                          ),
-                        );
-                      }),
+                        [product.picture, ...product.gallery].length,
+                        (index) {
+                          return Container(
+                            width: 8.0,
+                            height: 8.0,
+                            margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: controller.currentPage.value == index
+                                  ? AppColors.secondaryDark
+                                  : Colors.grey.withOpacity(0.5),
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
+
+            // Bottom section with product details
             Positioned(
               bottom: 0,
               left: 0,
               right: 0,
               child: Container(
-                height: MediaQuery.sizeOf(context).height * 0.66,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
-                    )),
+                height: MediaQuery.of(context).size.height * 0.68,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black12,
+                      offset: Offset(0, -4),
+                      blurRadius: 8,
+                    ),
+                  ],
+                ),
                 child: ListView(
                   padding: EdgeInsets.symmetric(
                       horizontal: AppConstants.HorizontelPadding),
                   children: [
-                    SizedBox(
-                      height: 30,
-                    ),
+                    const SizedBox(height: 30),
+
+                    // Tags row
                     Row(
                       children: [
                         Container(
-                          padding:
-                              EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 6, horizontal: 12),
                           decoration: BoxDecoration(
-                              color: Colors.blue,
-                              borderRadius: BorderRadius.circular(12)),
-                          child: Center(
-                            child: Text(
-                              "Top Rated",
-                              style: TextStyle(color: Colors.white),
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: const Text(
+                            "Top Rated",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12,
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
+                        const SizedBox(width: 10),
                         Container(
-                          padding:
-                              EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 6, horizontal: 12),
                           decoration: BoxDecoration(
-                              color: Color(0xFF08E488),
-                              borderRadius: BorderRadius.circular(12)),
-                          child: Center(
-                            child: Text("Top Rated",
-                                style: TextStyle(color: Colors.white)),
+                            color: const Color(0xFF08E488),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: const Text(
+                            "Pre-Order",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12,
+                            ),
                           ),
                         ),
                       ],
                     ),
+
+                    const SizedBox(height: 16),
+
+                    // Title and Price
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Flexible(
+                        Expanded(
+                          flex: 2,
                           child: Text(
                             product.detailPageTitle,
-                            style: Theme.of(context).textTheme.headlineSmall,
-                            softWrap:
-                                true, // Ensures text wraps instead of overflowing
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineSmall
+                                ?.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                ),
                           ),
                         ),
-                        Obx(() => Text(
-                              "RS ${controller.selectedVariationPrice.value}",
-                              style: Theme.of(context).textTheme.headlineSmall,
-                            )),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          flex: 1,
+                          child: Text(
+                            "RS ${controller.selectedVariationPrice.value}",
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineSmall
+                                ?.copyWith(
+                                  fontWeight: FontWeight.w700,
+                                  color: AppColors.secondaryDark,
+                                ),
+                            textAlign: TextAlign.right,
+                          ),
+                        ),
                       ],
                     ),
 
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 25),
 
-                    // 🔹 Color Selection
+                    // Color Selection
                     _buildSelectionCard(
                       title: "Color",
                       children: product.colors.map((color) {
@@ -221,14 +290,14 @@ class SingleProductDetailView extends StatelessWidget {
                           title: color.title,
                           isSelected: isSelected,
                           onTap: () => controller.updateSelectedColor(color.id),
-                          selectedColor: Colors.blue,
+                          selectedColor: AppColors.secondaryDark,
                         );
                       }).toList(),
                     ),
 
                     const SizedBox(height: 20),
 
-                    // 🔹 Memory Selection
+                    // Memory Selection
                     _buildSelectionCard(
                       title: "Select Memory",
                       children: product.memories.map((memory) {
@@ -238,90 +307,108 @@ class SingleProductDetailView extends StatelessWidget {
                           title: memory.title,
                           isSelected: isSelected,
                           onTap: () => controller.updateSelectedMemory(memory),
-                          selectedColor: Colors.green,
+                          selectedColor: const Color(0xFF08E488),
                         );
                       }).toList(),
                     ),
 
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 25),
 
-                    // 🔹 Short Description
+                    // Short Description
                     _buildDescriptionCard(
                       title: "Overview",
                       content: product.shortDescription,
                     ),
 
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 20),
 
-                    // 🔹 Long Description (HTML)
+                    InstallmentCalculator(
+                      totalProductPrice: double.parse(
+                          controller.selectedVariationPrice.value.toString()),
+                      minAdvanceAmount:
+                          double.parse(product.minAdvancePrice.toString()),
+                    ),
+
+                    const SizedBox(height: 20),
+
+                    // Long Description (HTML)
                     _buildDescriptionCard(
                       title: "Details",
                       content: product.longDescription,
-                      // child: Html(data: product.longDescription),
                     ),
 
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 20),
+
+                    // Quantity selector
                     Row(
                       children: [
+                        Text(
+                          "Quantity",
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),
+                        ),
+                        const SizedBox(width: 15),
                         QuantitySelector(),
                       ],
                     ),
-                    SizedBox(
-                      height: 20,
-                    ),
 
-                    // 🔹 Buy Now Button
+                    const SizedBox(height: 25),
+
+                    // Buy Now & Add to Cart Buttons
                     Row(
-                      // mainAxisAlignment: MainAxisAlignment.s,
                       children: [
-                        SizedBox(
-                          width: MediaQuery.sizeOf(context).width * 0.4,
-                          height: 50,
-                          child: OutlinedButton(
-                            onPressed: () {},
-                            style: OutlinedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(
-                                    12), // Adjust radius for rounded edges
+                        Expanded(
+                          child: SizedBox(
+                            height: 50,
+                            child: OutlinedButton(
+                              onPressed: () {},
+                              style: OutlinedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                side: const BorderSide(
+                                    color: Colors.grey, width: 1.5),
                               ),
-                              side: BorderSide(
-                                  color: Colors.grey, width: 2), // Grey border
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 12), // Adjust padding
+                              child: const Text(
+                                "Buy Now",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16,
+                                ),
+                              ),
                             ),
-                            child: Text(
-                              "Buy Now",
-                            ), // Adjust text color
                           ),
                         ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        SizedBox(
-                            width: MediaQuery.sizeOf(context).width * 0.4,
+                        const SizedBox(width: 15),
+                        Expanded(
+                          child: SizedBox(
                             height: 50,
                             child: CommonButton(
-                                icon: Icon(
-                                  Icons.shopping_cart,
-                                  size: 20,
-                                  color: Colors.white,
-                                ),
-                                text: "Add To Cart",
-                                onPressed: () {
-                                  final cartController =
-                                      Get.put(CartController());
-                                  cartController.addToCart(
-                                      productId: product.id.toString(),
-                                      memoryId: controller.selectedMemory.value
-                                          .toString(),
-                                      color: controller.selectedColor.value
-                                          .toString(),
-                                      price: controller
-                                          .selectedVariationPrice.value
-                                          .toString(),
-                                      minAdvancePrice:
-                                          product.minAdvancePrice.toString());
-                                })),
+                              icon: const Icon(
+                                Icons.shopping_cart,
+                                size: 20,
+                                color: Colors.white,
+                              ),
+                              text: "Add To Cart",
+                              onPressed: () {
+                                final cartController =
+                                    Get.put(CartController());
+                                cartController.addToCart(
+                                  tenureMonths: "1",
+                                  productId: product.id.toString(),
+                                  memoryId: controller.selectedMemory.value != null ?
+                                      controller.selectedMemory.value : null,
+                                  color:
+                                      controller.selectedColor.value != null ?  controller.selectedColor.value: null,
+                                  price: controller.selectedVariationPrice.value
+                                      .toString(),
+                                  minAdvancePrice:
+                                      product.minAdvancePrice.toString(),
+                                );
+                              },
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                     const SizedBox(height: 40),
@@ -329,40 +416,37 @@ class SingleProductDetailView extends StatelessWidget {
                 ),
               ),
             ),
-            // const SizedBox(height: 20),
-
-            // // 🔹 Title & Price
-
-            // const SizedBox(height: 30),
           ],
         );
       }),
     );
   }
 
-  /// 🔹 Selection Card UI
+  /// Selection Card UI
   Widget _buildSelectionCard(
       {required String title, required List<Widget> children}) {
-    return SizedBox(
-      // padding: const EdgeInsets.all(16),
-      // decoration: BoxDecoration(
-      //   color: Colors.white,
-      //   borderRadius: BorderRadius.circular(12),
-      //   boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 6)],
-      // ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(title,
-              style:
-                  const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-          Wrap(spacing: 8, children: children),
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Colors.black87,
+          ),
+        ),
+        const SizedBox(height: 10),
+        Wrap(
+          spacing: 10,
+          runSpacing: 10,
+          children: children,
+        ),
+      ],
     );
   }
 
-  /// 🔹 Selection Chip UI
+  /// Selection Chip UI
   Widget _buildSelectionChip({
     required String title,
     required bool isSelected,
@@ -371,52 +455,65 @@ class SingleProductDetailView extends StatelessWidget {
   }) {
     return GestureDetector(
       onTap: onTap,
-      child: Chip(
-        label: Text(title,
-            style: TextStyle(color: isSelected ? Colors.white : Colors.black)),
-        backgroundColor: isSelected ? selectedColor : Colors.grey[200],
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        elevation: isSelected ? 2 : 0,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        decoration: BoxDecoration(
+          color: isSelected ? selectedColor : Colors.grey[100],
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: isSelected
+              ? [
+                  BoxShadow(
+                      color: selectedColor.withOpacity(0.3),
+                      blurRadius: 4,
+                      offset: Offset(0, 2))
+                ]
+              : null,
+        ),
+        child: Text(
+          title,
+          style: TextStyle(
+            color: isSelected ? Colors.white : Colors.black87,
+            fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+          ),
+        ),
       ),
     );
   }
 
-  /// 🔹 Description Card UI
+  /// Description Card UI
   Widget _buildDescriptionCard(
       {required String title, String? content, Widget? child}) {
-    return SizedBox(
-      //  padding: const EdgeInsets.all(16),
-      // decoration: BoxDecoration(
-      //   color: Colors.white,
-      //   borderRadius: BorderRadius.circular(12),
-      //   boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 6)],
-      // ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(title,
-              style:
-                  const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-          const SizedBox(height: 10),
-          if (content != null)
-            AnimatedReadMoreText(
-              content,
-              maxLines: 2,
-              // Set a custom text for the expand button. Defaults to Read more
-              readMoreText: 'show more',
-              // Set a custom text for the collapse button. Defaults to Read less
-              readLessText: 'show less',
-              // Set a custom text style for the main block of text
-              textStyle: const TextStyle(fontSize: 14, color: Colors.black87),
-              // Set a custom text style for the expand/collapse button
-              buttonTextStyle: TextStyle(
-                  fontSize: 16,
-                  // fontWeight: FontWeight.bold,
-                  color: AppColors.secondaryDark),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Colors.black87,
+          ),
+        ),
+        const SizedBox(height: 10),
+        if (content != null)
+          AnimatedReadMoreText(
+            content,
+            maxLines: 2,
+            readMoreText: 'show more',
+            readLessText: 'show less',
+            textStyle: const TextStyle(
+                fontSize: 14, color: Colors.black87, height: 1.5),
+            buttonTextStyle: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+              color: AppColors.secondaryDark,
             ),
-          if (child != null) child,
-        ],
-      ),
+          ),
+        if (child != null) child,
+      ],
     );
   }
+
+  /// Payment Calculator UI
+  /// Payment Calculator UI
 }

@@ -1,5 +1,7 @@
+import 'package:atomshop/common/utils/app_utils.dart';
 import 'package:atomshop/features/cart/model/cart_item_model.dart';
 import 'package:atomshop/features/profile/utils/utils.dart';
+import 'package:atomshop/local_storage/local_storage_methods.dart';
 import 'package:atomshop/network/network_manager/network_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -7,94 +9,133 @@ import 'package:get/get.dart';
 class CartController extends GetxController {
   final RxList<CartItemModel> cartItemsList = <CartItemModel>[].obs;
   final RxBool isLoading = false.obs;
+  final RxInt cartCount = 0.obs;
+  final RxBool showCartBadge = false.obs;
+  RxString totalAmount = "0".obs;
 
+  @override
+  void onInit() {
+    super.onInit();
+    getCartItems();
+    getCount();
+  }
+
+  /// Fetch Cart Items
   void getCartItems() async {
     try {
-      isLoading.value = true;
       cartItemsList.clear();
+      cartItemsList.refresh();
+      isLoading.value = true;
       Map<String, dynamic> payload = {
-        "user_type": "guest",
-        "guest_id": "GHD768GGYH",
+        "user_type": AppUtils.isUserLoggedIn() ? "auth" : "guest",
+        if (!AppUtils.isUserLoggedIn()) "guest_id": "abcd-6789-mkvb-8765",
+        if (AppUtils.isUserLoggedIn())
+          "user_id": LocalStorageMethods.instance.getUserId(),
       };
+
       var response = await NetworkManager().postRequest("cart", payload);
       if (response['success'] == true) {
-        for (Map<String, dynamic> item in response['data']['cart']) {
-          cartItemsList.add(CartItemModel.fromJson(item));
-        }
-
-        //showToastMessage(response['original']['message']);
-      } else {
-        throw Exception('Login failed: ${response['message']}');
+        cartItemsList.assignAll(
+          response['data']['cart']
+              .map<CartItemModel>((item) => CartItemModel.fromJson(item))
+              .toList(),
+        );
+        totalAmount.value = response['data']['total'] ?? "0";
       }
-      isLoading.value = false;
     } catch (e) {
       debugPrint(e.toString());
+    } finally {
       isLoading.value = false;
     }
   }
 
+  /// Add Item to Cart
   void addToCart({
     required String productId,
-    required String memoryId,
-    required String color,
+     int? memoryId,
+     int? color,
     required String price,
     required String minAdvancePrice,
+    required String tenureMonths,
   }) async {
     try {
       Map<String, dynamic> payload = {
         "product_id": productId,
-        "memory_id": memoryId,
+        "memory_id":  memoryId,
         "color_id": color,
         "price": price,
-        "min_advance_price": productId,
-        "user_type": "guest",
-        "guest_id": "GHD768GGYH",
+        "tenure_months":tenureMonths,
+        "min_advance_price": minAdvancePrice,
+        "user_type": AppUtils.isUserLoggedIn() ? "auth" : "guest",
+        if (!AppUtils.isUserLoggedIn()) "guest_id": "abcd-6789-mkvb-8765",
+        if (AppUtils.isUserLoggedIn())
+          "user_id": LocalStorageMethods.instance.getUserId(),
       };
 
       var response = await NetworkManager().postRequest("cart/add", payload);
       if (response['success'] == true) {
         showToastMessage(response['message']);
+        cartItemsList.clear();
+        cartItemsList.refresh();
+        getCartItems(); // Refresh cart
         getCount();
-      } else {
-        throw Exception('Login failed: ${response['message']}');
       }
     } catch (e) {
       debugPrint(e.toString());
     }
   }
 
-  RxInt cartCount = 0.obs;
-  RxBool showCartBadge = false.obs;
+  /// Remove Item from Cart
+  void removeItem(String id) async {
+    try {
+      Map<String, dynamic> payload = {"cart_id": id};
+      var response = await NetworkManager().postRequest("cart/remove", payload);
+       print(response);
+      if (response["original"]['success'] == true) {
+        getCartItems(); // Refresh cart
+        getCount();
+      }
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 
+  /// Get Cart Count (For Badge Updates)
   void getCount() async {
     try {
       Map<String, dynamic> payload = {
-        "user_type": "guest",
-        "guest_id": "GHD768GGYH",
+        "user_type": AppUtils.isUserLoggedIn() ? "auth" : "guest",
+        if (!AppUtils.isUserLoggedIn()) "guest_id": "abcd-6789-mkvb-8765",
+        if (AppUtils.isUserLoggedIn())
+          "user_id": LocalStorageMethods.instance.getUserId(),
       };
 
       var response = await NetworkManager().postRequest("cart/count", payload);
       if (response['success'] == true) {
         cartCount.value = response['count'];
         showCartBadge.value = response['count'] > 0;
-      } else {
-        throw Exception('Login failed: ${response['message']}');
       }
     } catch (e) {
       debugPrint(e.toString());
     }
   }
 
-  void removeItem(String id) async {
+  /// Clear Cart
+  void clearCart() async {
     try {
       Map<String, dynamic> payload = {
-        "cart_id": id,
+        "user_type": AppUtils.isUserLoggedIn() ? "auth" : "guest",
+        if (!AppUtils.isUserLoggedIn()) "guest_id": "abcd-6789-mkvb-8765",
+        if (AppUtils.isUserLoggedIn())
+          "user_id": LocalStorageMethods.instance.getUserId(),
       };
-      var response = await NetworkManager().postRequest("cart/count", payload);
-      if (response['original']['success'] == true) {
-        showToastMessage(response['original']['message']);
-      } else {
-        throw Exception('Login failed: ${response['message']}');
+
+      var response = await NetworkManager().postRequest("cart/clear", payload);
+      if (response['success'] == true) {
+        cartItemsList.clear();
+        totalAmount.value = "0";
+        cartCount.value = 0;
+        showCartBadge.value = false;
       }
     } catch (e) {
       debugPrint(e.toString());

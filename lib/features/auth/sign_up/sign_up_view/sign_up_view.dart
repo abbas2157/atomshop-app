@@ -5,7 +5,6 @@ import 'package:atomshop/common/widgets/logo.dart';
 import 'package:atomshop/features/auth/auth_widget/lable_text.dart';
 import 'package:atomshop/features/auth/auth_widget/terms_and_condi.dart';
 import 'package:atomshop/features/auth/sign_up/sign_up_controller/sign_up_controller.dart';
-import 'package:atomshop/main.dart';
 import 'package:atomshop/style/colors/app_colors.dart';
 import 'package:atomshop/style/text_style/text_style.dart';
 import 'package:flutter/material.dart';
@@ -122,12 +121,10 @@ class SignupScreen extends StatelessWidget {
                     }
 
                     // Perform signup logic here
-                    debugPrint('Name: $name');
-                    debugPrint('Email: $email');
-                    debugPrint('Password: $password');
+
                     controller.signup(name, email, password, confirmPassword);
                   }),
-               SizedBox(height: 40.h),
+              SizedBox(height: 40.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

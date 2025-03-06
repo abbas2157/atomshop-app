@@ -3,6 +3,7 @@ import 'package:atomshop/common/widgets/logo.dart';
 import 'package:atomshop/extenstion/alignment_extension.dart';
 import 'package:atomshop/extenstion/padding_extension.dart';
 import 'package:atomshop/features/categories/categories_controller/categories_controller.dart';
+import 'package:atomshop/features/categories/view/category_products_view.dart';
 import 'package:atomshop/features/featured_products/view/featured_products_widget.dart';
 import 'package:atomshop/features/home/widget/slider_widget.dart';
 import 'package:atomshop/features/language/controller/language_controller.dart';
@@ -99,7 +100,7 @@ class MyHomePageState extends State<MyHomePage> {
               ),
               SearchTextField(
                 onTap: () {
-                  Get.to(()=>SearchView());
+                  Get.to(() => SearchView());
                 },
                 readOnly: true,
                 controller: TextEditingController(),
@@ -145,57 +146,25 @@ class MyHomePageState extends State<MyHomePage> {
               /// top rated products section
               TopRatedProductsWidget()
                   .paddingHorizontel(AppConstants.HorizontelPadding),
-                   SizedBox(
+              SizedBox(
                 height: 10.h,
               ),
               Text("Brands", style: AppTextStyles.headline3)
                   .alignTopLeft()
                   .paddingHorizontel(AppConstants.HorizontelPadding),
-                    SizedBox(
+              SizedBox(
                 height: 5.h,
               ),
               BrandsView(),
-              SizedBox(height: 20.h,)
+              SizedBox(
+                height: 20.h,
+              )
             ],
           ),
         ),
       ),
     );
   }
-
-  // Padding _buildTagAndSeeAllButton(BuildContext context) {
-  //   return Padding(
-  //     padding: EdgeInsets.symmetric(
-  //         horizontal: AppConstants.HorizontelPadding, vertical: 0),
-  //     child: Row(
-  //       crossAxisAlignment: CrossAxisAlignment.center,
-  //       children: [
-  //         Expanded(
-  //           child: Text(
-  //             "Categories",
-  //             style: AppTextStyles.headline3,
-  //           ),
-  //         ),
-  //         GestureDetector(
-  //           onTap: () => _bottomNavController.changePage(1),
-  //           child: Container(
-  //             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-  //             decoration: BoxDecoration(
-  //               borderRadius: BorderRadius.circular(6),
-  //               color: AppColors.secondaryLight.withOpacity(0.1),
-  //             ),
-  //             child: Text(
-  //               "see all",
-  //               style: Theme.of(context).textTheme.bodySmall!.copyWith(
-  //                   color: AppColors.secondaryLight,
-  //                   fontWeight: FontWeight.w500),
-  //             ),
-  //           ),
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
 
   Obx _homePageCategories(bool isDarkMode) {
     return Obx(
@@ -219,50 +188,58 @@ class MyHomePageState extends State<MyHomePage> {
             itemBuilder: (context, index) {
               final category = _categoriesController.categories[index];
 
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Card(
-                    color: Colors.white,
-                    elevation: 0, // Slightly stronger shadow for a richer look
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                          AppConstants.fieldsBorderRadius), // Rounded corners
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(Get.width *
-                          0.03), // Responsive padding inside the card
-                      child: Image.network(
-                        category.picture ?? "",
-                        height: Get.height *
-                            0.07, // Bigger image (7% of screen height)
-                        width:
-                            Get.height * 0.07, // Keeping width equal to height
-                        fit: BoxFit.cover, // Ensures image scales properly
-                        errorBuilder: (context, error, stackTrace) =>
-                            const Icon(Icons.image_not_supported,
-                                size: 50, color: Colors.grey),
+              return InkWell(
+                onTap: () {
+                  Get.to(() => CategoryProductsView(
+                      id: category.id.toString(),
+                      name: category.title.toString()));
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Card(
+                      color: Colors.white,
+                      elevation:
+                          0, // Slightly stronger shadow for a richer look
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                            AppConstants.fieldsBorderRadius), // Rounded corners
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.all(Get.width *
+                            0.03), // Responsive padding inside the card
+                        child: Image.network(
+                          category.picture ?? "",
+                          height: Get.height *
+                              0.07, // Bigger image (7% of screen height)
+                          width: Get.height *
+                              0.07, // Keeping width equal to height
+                          fit: BoxFit.cover, // Ensures image scales properly
+                          errorBuilder: (context, error, stackTrace) =>
+                              const Icon(Icons.image_not_supported,
+                                  size: 50, color: Colors.grey),
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                      height:
-                          Get.height * 0.007), // Spacing between image & text
-                  SizedBox(
-                    width: Get.width *
-                        0.2, // Responsive width to prevent text overflow
-                    child: Text(
-                      category.title ?? "",
-                      style: TextStyle(
-                        fontSize: Get.width * 0.035, // Responsive font size
-                        fontWeight: FontWeight.w500,
+                    SizedBox(
+                        height:
+                            Get.height * 0.007), // Spacing between image & text
+                    SizedBox(
+                      width: Get.width *
+                          0.2, // Responsive width to prevent text overflow
+                      child: Text(
+                        category.title ?? "",
+                        style: TextStyle(
+                          fontSize: Get.width * 0.035, // Responsive font size
+                          fontWeight: FontWeight.w500,
+                        ),
+                        textAlign: TextAlign.center,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
                       ),
-                      textAlign: TextAlign.center,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               );
             },
           ),

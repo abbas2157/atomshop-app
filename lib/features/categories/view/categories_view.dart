@@ -1,5 +1,6 @@
 import 'package:atomshop/common/constants/app_constants.dart';
 import 'package:atomshop/features/categories/categories_controller/categories_controller.dart';
+import 'package:atomshop/features/categories/view/category_products_view.dart';
 import 'package:atomshop/style/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -49,30 +50,37 @@ class CategoriesView extends StatelessWidget {
                   itemCount: controller.categories.length,
                   itemBuilder: (context, index) {
                     final category = controller.categories[index];
-                    return Container(
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: Color(0xFFD9D9D9),
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(
-                          color: isDarkMode
-                              ? AppColors.appGreyColor
-                              : Color(0xffF4F5FD),
-                        ),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.network(
-                            category.picture ?? "",
-                            height: 70,
-                            width: 70,
-                            errorBuilder: (context, error, stackTrace) =>
-                                Icon(Icons.image_not_supported, size: 40),
+                    return InkWell(
+                      onTap: () {
+                        Get.to(() => CategoryProductsView(
+                            id: category.id.toString(),
+                            name: category.title.toString()));
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: Color(0xFFD9D9D9),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: isDarkMode
+                                ? AppColors.appGreyColor
+                                : Color(0xffF4F5FD),
                           ),
-                          SizedBox(height: 5),
-                          Text(category.title ?? ""),
-                        ],
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.network(
+                              category.picture ?? "",
+                              height: 70,
+                              width: 70,
+                              errorBuilder: (context, error, stackTrace) =>
+                                  Icon(Icons.image_not_supported, size: 40),
+                            ),
+                            SizedBox(height: 5),
+                            Text(category.title ?? ""),
+                          ],
+                        ),
                       ),
                     );
                   },

@@ -5,9 +5,9 @@ import 'package:atomshop/common/widgets/logo.dart';
 import 'package:atomshop/extenstion/alignment_extension.dart';
 import 'package:atomshop/features/auth/auth_widget/terms_and_condi.dart';
 import 'package:atomshop/features/auth/auth_widget/lable_text.dart';
+import 'package:atomshop/features/auth/forgot_password/view/confirmation_email/confirmation_email_view.dart';
 import 'package:atomshop/features/auth/login/login_controller/login_controller.dart';
 import 'package:atomshop/features/auth/sign_up/sign_up_view/sign_up_view.dart';
-import 'package:atomshop/main.dart';
 import 'package:atomshop/style/colors/app_colors.dart';
 import 'package:atomshop/style/text_style/text_style.dart';
 import 'package:atomshop/style/theme/theme_controller/theme_controller.dart';
@@ -92,6 +92,7 @@ class LoginScreen extends StatelessWidget {
                   onPressed: () {
                     // Navigate to forgot password screen
                     // Implement your Forgot Password logic here
+                    Get.to(() => ConfirmationEmailView());
                   },
                   child: Text(
                     'Forgot Password?',

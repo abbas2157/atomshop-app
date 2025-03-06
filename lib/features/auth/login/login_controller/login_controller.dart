@@ -28,6 +28,10 @@ class LoginController extends GetxController {
             .writeUserApiToken(response["data"]["token"]);
         LocalStorageMethods.instance
             .writeUserName(response["data"]["user"]["name"]);
+              LocalStorageMethods.instance
+            .writeUserEmail(response["data"]["user"]["email"]);
+               LocalStorageMethods.instance
+            .writeUserId((response["data"]["user"]["id"]).toString());
         Get.to(() => BottomNavPage());
         return response['data']; // Return user data and token
       } else {

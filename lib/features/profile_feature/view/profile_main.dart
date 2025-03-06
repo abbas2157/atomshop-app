@@ -1,5 +1,6 @@
 import 'package:atomshop/common/utils/app_utils.dart';
 import 'package:atomshop/features/auth/login/login_view/login_view.dart';
+import 'package:atomshop/features/bottom_nav_bar/bottom_nav_bar_controller/bottom_nav_bar_controller.dart';
 import 'package:atomshop/local_storage/local_storage_methods.dart';
 import 'package:atomshop/style/colors/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -138,6 +139,10 @@ class _ProfileMainState extends State<ProfileMain> {
                                     // Handle logout logic
                                     LocalStorageMethods.instance
                                         .clearLocalStorage();
+                                          final BottomNavController controller = Get.put(BottomNavController());
+                                          controller.changePage(0);
+                                          showToastMessage("Logout successfully");
+
                                   }); // Show confirmation dialog
                                 }
                               : () {
@@ -154,7 +159,10 @@ class _ProfileMainState extends State<ProfileMain> {
                             contentPadding: EdgeInsets.symmetric(
                                 horizontal: 0.0, vertical: 0.0),
                             dense: true,
-                            leading: Icon(isUserLoggedIn ?Icons.logout :Icons.login, color:isUserLoggedIn ? Colors.red: Colors.grey),
+                            leading: Icon(
+                                isUserLoggedIn ? Icons.logout : Icons.login,
+                                color:
+                                    isUserLoggedIn ? Colors.red : Colors.grey),
                             title: Text(isUserLoggedIn ? 'Logout' : 'Login'),
                           ),
                         ),

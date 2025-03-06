@@ -1,6 +1,7 @@
 import 'package:atomshop/common/constants/app_constants.dart';
 import 'package:atomshop/common/widgets/logo.dart';
 import 'package:atomshop/extenstion/padding_extension.dart';
+import 'package:atomshop/features/featured_products/view/single_product_detail_view.dart';
 import 'package:atomshop/features/search/controller/search_products_controller.dart';
 import 'package:atomshop/features/search/widgets/textfield.dart';
 import 'package:atomshop/local_storage/local_storage_methods.dart';
@@ -132,6 +133,7 @@ class SearchView extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               onTap: () {
                 // Product details navigation would go here
+                Get.to(()=>SingleProductDetailView(productId: product.id!));
               },
               child: Padding(
                 padding: const EdgeInsets.all(12),
