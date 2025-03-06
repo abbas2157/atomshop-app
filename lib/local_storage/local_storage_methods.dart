@@ -13,7 +13,7 @@ class LocalStorageMethods {
     return userID;
   }
 
-    Future<void> writeisFirstTimeOpen(bool value) async {
+  Future<void> writeisFirstTimeOpen(bool value) async {
     await Prefs.setBool("isFirstTimeOpen", value);
   }
 
