@@ -4,6 +4,7 @@ import 'package:atomshop/common/widgets/common_button.dart';
 import 'package:atomshop/common/widgets/loading.dart';
 import 'package:atomshop/features/cart/controller/cart_controller.dart';
 import 'package:atomshop/features/installment_calculator/view/calculator_view.dart';
+import 'package:atomshop/features/wish_list/controller/wishlist_controller.dart';
 import 'package:atomshop/style/colors/app_colors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,8 @@ class SingleProductDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double cardWidth = screenWidth * 0.4;
     final ProductDetailController controller =
         Get.put(ProductDetailController());
     controller.fetchProductDetails(productId);
@@ -76,12 +79,33 @@ class SingleProductDetailView extends StatelessWidget {
                             shape: MaterialStateProperty.all(CircleBorder()),
                           ),
                         ),
-                        CircleAvatar(
-                          radius: 20,
-                          backgroundColor: Colors.white,
-                          child:
-                              Icon(Icons.favorite, color: Colors.red.shade600),
-                        ),
+                        Obx(() {
+                          final WishlistController controller =
+                              Get.put(WishlistController());
+
+                          bool isFavorited = controller
+                                  .favoriteProducts[product.id.toString()] ??
+                              false;
+
+                          return InkWell(
+                            onTap: () {
+                              // final controller = Get.put(WishlistController());
+                              controller.addToWishList(
+                                  productId: product.id.toString());
+                            },
+                            child: CircleAvatar(
+                              radius: cardWidth * 0.1, // 10% of card width
+                              backgroundColor: Colors.grey.shade200,
+
+                              child: Icon(
+                                  isFavorited
+                                      ? Icons.favorite
+                                      : Icons.favorite_border,
+                                  color:
+                                      isFavorited ? Colors.red : Colors.white),
+                            ),
+                          );
+                        })
                       ],
                     ),
                   ),
@@ -396,10 +420,13 @@ class SingleProductDetailView extends StatelessWidget {
                                 cartController.addToCart(
                                   tenureMonths: "1",
                                   productId: product.id.toString(),
-                                  memoryId: controller.selectedMemory.value != null ?
-                                      controller.selectedMemory.value : null,
-                                  color:
-                                      controller.selectedColor.value != null ?  controller.selectedColor.value: null,
+                                  memoryId:
+                                      controller.selectedMemory.value != null
+                                          ? controller.selectedMemory.value
+                                          : null,
+                                  color: controller.selectedColor.value != null
+                                      ? controller.selectedColor.value
+                                      : null,
                                   price: controller.selectedVariationPrice.value
                                       .toString(),
                                   minAdvancePrice:

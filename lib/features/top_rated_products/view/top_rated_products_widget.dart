@@ -2,6 +2,7 @@ import 'package:atomshop/common/widgets/loading.dart';
 import 'package:atomshop/features/featured_products/view/single_product_detail_view.dart';
 import 'package:atomshop/features/top_rated_products/controller/top_rated_products_controller.dart';
 import 'package:atomshop/features/top_rated_products/model/top_rated_products_model.dart';
+import 'package:atomshop/features/wish_list/controller/wishlist_controller.dart';
 import 'package:atomshop/style/text_style/text_style.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -108,11 +109,28 @@ class TopRatedProductCard extends StatelessWidget {
             /// Wishlist Icon
             Align(
               alignment: Alignment.topRight,
-              child: CircleAvatar(
-                radius: cardWidth * 0.1, // 10% of card width
-                backgroundColor: Colors.grey.shade200,
-                child: const Icon(Icons.favorite_border, color: Colors.white),
-              ),
+              child: Obx(() {
+                final WishlistController controller =
+                    Get.put(WishlistController());
+
+                bool isFavorited =
+                    controller.favoriteProducts[product.id.toString()] ?? false;
+
+                return InkWell(
+                  onTap: () {
+                    // final controller = Get.put(WishlistController());
+                    controller.addToWishList(productId: product.id.toString());
+                  },
+                  child: CircleAvatar(
+                    radius: cardWidth * 0.1, // 10% of card width
+                    backgroundColor: Colors.grey.shade200,
+
+                    child: Icon(
+                        isFavorited ? Icons.favorite : Icons.favorite_border,
+                        color: isFavorited ? Colors.red : Colors.white),
+                  ),
+                );
+              }),
             ),
 
             /// Product Image

@@ -3,6 +3,7 @@ import 'package:atomshop/common/constants/app_constants.dart';
 import 'package:atomshop/common/widgets/common_button.dart';
 import 'package:atomshop/common/widgets/loading.dart';
 import 'package:atomshop/features/cart/controller/cart_controller.dart';
+import 'package:atomshop/features/wish_list/controller/wishlist_controller.dart';
 import 'package:atomshop/style/colors/app_colors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,8 @@ class SingleProductDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double cardWidth = screenWidth * 0.4;
     final TopRatedProductDetailController controller =
         Get.put(TopRatedProductDetailController());
     controller.fetchProductDetails(productId);
@@ -75,11 +78,33 @@ class SingleProductDetailView extends StatelessWidget {
                         },
                         icon: Icon(Icons.arrow_back_ios),
                       ),
-                      CircleAvatar(
-                        radius: 20,
-                        backgroundColor: Colors.black,
-                        child: const Icon(Icons.favorite, color: Colors.red),
-                      ),
+                      // Obx(() {
+                      //   final WishlistController controller =
+                      //       Get.put(WishlistController());
+
+                      //   bool isFavorited = controller
+                      //           .favoriteProducts[product.id.toString()] ??
+                      //       false;
+
+                      //   return InkWell(
+                      //     onTap: () {
+                      //       // final controller = Get.put(WishlistController());
+                      //       controller.addToWishList(
+                      //           productId: product.id.toString());
+                      //     },
+                      //     child: CircleAvatar(
+                      //       radius: cardWidth * 0.1, // 10% of card width
+                      //       backgroundColor: Colors.grey.shade200,
+
+                      //       child: Icon(
+                      //           isFavorited
+                      //               ? Icons.favorite
+                      //               : Icons.favorite_border,
+                      //           color:
+                      //               isFavorited ? Colors.green : Colors.white),
+                      //     ),
+                      //   );
+                      // })
                     ],
                   ),
                   SizedBox(
