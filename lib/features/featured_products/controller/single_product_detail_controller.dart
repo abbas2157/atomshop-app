@@ -38,4 +38,5 @@ class ProductDetailController extends GetxController {
     selectedVariationPrice.value =
         memory.variationPrice ?? productDetail.value!.variationPrice;
   }
+
 }

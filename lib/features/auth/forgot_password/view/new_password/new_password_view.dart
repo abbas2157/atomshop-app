@@ -5,7 +5,7 @@ import 'package:atomshop/features/auth/auth_widget/lable_text.dart';
 import 'package:atomshop/features/auth/forgot_password/controller/forget_password_controller.dart';
 import 'package:atomshop/features/auth/forgot_password/view/password_created/password_created_view.dart';
 import 'package:atomshop/features/auth/login/login_view/login_view.dart';
-import 'package:atomshop/features/profile/utils/utils.dart';
+import 'package:atomshop/features/profile_feature/utils/utils.dart';
 import 'package:atomshop/style/colors/app_colors.dart';
 import 'package:atomshop/style/text_style/text_style.dart';
 import 'package:flutter/material.dart';

@@ -2,7 +2,7 @@ import 'package:atomshop/common/widgets/common_button.dart';
 import 'package:atomshop/extenstion/alignment_extension.dart';
 import 'package:atomshop/features/auth/forgot_password/controller/forget_password_controller.dart';
 import 'package:atomshop/features/auth/forgot_password/view/new_password/new_password_view.dart';
-import 'package:atomshop/features/profile/utils/utils.dart';
+import 'package:atomshop/features/profile_feature/utils/utils.dart';
 import 'package:atomshop/style/colors/app_colors.dart';
 import 'package:atomshop/style/text_style/text_style.dart';
 import 'package:flutter/material.dart';

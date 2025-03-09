@@ -20,8 +20,8 @@ io.github.ponnamkarthik.toast.fluttertoast-fragment-1.7.1-18 /Users/apple/.gradl
 io.github.ponnamkarthik.toast.fluttertoast-jetified-tracing-1.2.0-19 /Users/apple/.gradle/caches/transforms-3/e896b9ac412a8814559a776dc7b5a420/transformed/jetified-tracing-1.2.0/res
 io.github.ponnamkarthik.toast.fluttertoast-main-20 /Users/apple/.pub-cache/hosted/pub.dev/fluttertoast-8.2.12/android/src/main/res
 io.github.ponnamkarthik.toast.fluttertoast-release-21 /Users/apple/.pub-cache/hosted/pub.dev/fluttertoast-8.2.12/android/src/release/res
-io.github.ponnamkarthik.toast.fluttertoast-pngs-22 /Users/apple/flutterprojects/atomshop/build/fluttertoast/generated/res/pngs/release
-io.github.ponnamkarthik.toast.fluttertoast-resValues-23 /Users/apple/flutterprojects/atomshop/build/fluttertoast/generated/res/resValues/release
-io.github.ponnamkarthik.toast.fluttertoast-mergeReleaseResources-24 /Users/apple/flutterprojects/atomshop/build/fluttertoast/intermediates/incremental/release/mergeReleaseResources/merged.dir
-io.github.ponnamkarthik.toast.fluttertoast-mergeReleaseResources-25 /Users/apple/flutterprojects/atomshop/build/fluttertoast/intermediates/incremental/release/mergeReleaseResources/stripped.dir
-io.github.ponnamkarthik.toast.fluttertoast-merged_res-26 /Users/apple/flutterprojects/atomshop/build/fluttertoast/intermediates/merged_res/release
+io.github.ponnamkarthik.toast.fluttertoast-pngs-22 /Users/apple/flutterprojects/atomshop-app/build/fluttertoast/generated/res/pngs/release
+io.github.ponnamkarthik.toast.fluttertoast-resValues-23 /Users/apple/flutterprojects/atomshop-app/build/fluttertoast/generated/res/resValues/release
+io.github.ponnamkarthik.toast.fluttertoast-mergeReleaseResources-24 /Users/apple/flutterprojects/atomshop-app/build/fluttertoast/intermediates/incremental/release/mergeReleaseResources/merged.dir
+io.github.ponnamkarthik.toast.fluttertoast-mergeReleaseResources-25 /Users/apple/flutterprojects/atomshop-app/build/fluttertoast/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+io.github.ponnamkarthik.toast.fluttertoast-merged_res-26 /Users/apple/flutterprojects/atomshop-app/build/fluttertoast/intermediates/merged_res/release

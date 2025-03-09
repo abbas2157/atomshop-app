@@ -9,8 +9,8 @@
 9        android:targetSdkVersion="35" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:2:5-66
-11-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:2:22-64
+11-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:2:5-66
+11-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:2:22-64
 12    <!--
 13         Required to query activities that can process text, see:
 14         https://developer.android.com/training/package-visibility and
@@ -19,16 +19,16 @@
 17         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
 18    -->
 19    <queries>
-19-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:41:5-46:15
+19-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:41:5-46:15
 20        <intent>
-20-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:42:9-45:18
+20-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:42:9-45:18
 21            <action android:name="android.intent.action.PROCESS_TEXT" />
-21-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:43:13-72
-21-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:43:21-70
+21-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:43:13-72
+21-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:43:21-70
 22
 23            <data android:mimeType="text/plain" />
-23-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:44:13-50
-23-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:44:19-48
+23-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:44:13-50
+23-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:44:19-48
 24        </intent>
 25    </queries>
 26
@@ -45,32 +45,32 @@
 32
 33    <application
 34        android:name="android.app.Application"
-34-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:6:9-42
+34-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:6:9-42
 35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 35-->[androidx.core:core:1.13.1] /Users/apple/.gradle/caches/transforms-3/889ae3adf7a24645889ee22f4dad2cac/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
 36        android:extractNativeLibs="true"
 37        android:icon="@mipmap/launcher_icon"
-37-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:7:9-45
+37-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:7:9-45
 38        android:label="atomshop" >
-38-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:5:9-33
+38-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:5:9-33
 39        <activity
-39-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:8:9-29:20
+39-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:8:9-29:20
 40            android:name="com.example.atomshop.MainActivity"
-40-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:9:13-41
+40-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:9:13-41
 41            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-41-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:14:13-163
+41-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:14:13-163
 42            android:exported="true"
-42-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:10:13-36
+42-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:10:13-36
 43            android:hardwareAccelerated="true"
-43-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:15:13-47
+43-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:15:13-47
 44            android:launchMode="singleTop"
-44-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:11:13-43
+44-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:11:13-43
 45            android:taskAffinity=""
-45-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:12:13-36
+45-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:12:13-36
 46            android:theme="@style/LaunchTheme"
-46-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:13:13-47
+46-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:13:13-47
 47            android:windowSoftInputMode="adjustResize" >
-47-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:16:13-55
+47-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:16:13-55
 48
 49            <!--
 50                 Specifies an Android theme to apply to this Activity as soon as
@@ -79,21 +79,21 @@
 53                 to determine the Window background behind the Flutter UI.
 54            -->
 55            <meta-data
-55-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:21:13-24:17
+55-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:21:13-24:17
 56                android:name="io.flutter.embedding.android.NormalTheme"
-56-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:22:15-70
+56-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:22:15-70
 57                android:resource="@style/NormalTheme" />
-57-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:23:15-52
+57-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:23:15-52
 58
 59            <intent-filter>
-59-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:25:13-28:29
+59-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:25:13-28:29
 60                <action android:name="android.intent.action.MAIN" />
-60-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:26:17-68
-60-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:26:25-66
+60-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:26:17-68
+60-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:26:25-66
 61
 62                <category android:name="android.intent.category.LAUNCHER" />
-62-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:27:17-76
-62-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:27:27-74
+62-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:27:17-76
+62-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:27:27-74
 63            </intent-filter>
 64        </activity>
 65        <!--
@@ -101,11 +101,11 @@
 67             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 68        -->
 69        <meta-data
-69-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:32:9-34:33
+69-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:32:9-34:33
 70            android:name="flutterEmbedding"
-70-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:33:13-44
+70-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:33:13-44
 71            android:value="2" />
-71-->/Users/apple/flutterprojects/atomshop/android/app/src/main/AndroidManifest.xml:34:13-30
+71-->/Users/apple/flutterprojects/atomshop-app/android/app/src/main/AndroidManifest.xml:34:13-30
 72
 73        <uses-library
 73-->[androidx.window:window:1.2.0] /Users/apple/.gradle/caches/transforms-3/8859fd2468ade3ef2655d1f63d6737f2/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40

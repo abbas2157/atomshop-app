@@ -1,13 +1,13 @@
 <libraries>
   <library
-      name="__local_aars__:/Users/apple/flutterprojects/atomshop/build/app/intermediates/flutter/release/libs.jar:unspecified@jar"
-      jars="/Users/apple/flutterprojects/atomshop/build/app/intermediates/flutter/release/libs.jar"
-      resolved="__local_aars__:/Users/apple/flutterprojects/atomshop/build/app/intermediates/flutter/release/libs.jar:unspecified"/>
+      name="__local_aars__:/Users/apple/flutterprojects/atomshop-app/build/app/intermediates/flutter/release/libs.jar:unspecified@jar"
+      jars="/Users/apple/flutterprojects/atomshop-app/build/app/intermediates/flutter/release/libs.jar"
+      resolved="__local_aars__:/Users/apple/flutterprojects/atomshop-app/build/app/intermediates/flutter/release/libs.jar:unspecified"/>
   <library
-      name="/Users/apple/flutterprojects/atomshop/android@@:fluttertoast::release"
-      jars="/Users/apple/flutterprojects/atomshop/build/fluttertoast/.transforms/40145b240a160ae02e0b301ef8508968/transformed/out/jars/classes.jar:/Users/apple/flutterprojects/atomshop/build/fluttertoast/.transforms/40145b240a160ae02e0b301ef8508968/transformed/out/jars/libs/R.jar"
+      name="/Users/apple/flutterprojects/atomshop-app/android@@:fluttertoast::release"
+      jars="/Users/apple/flutterprojects/atomshop-app/build/fluttertoast/.transforms/112570be434c9e81218f843c235a23ca/transformed/out/jars/classes.jar:/Users/apple/flutterprojects/atomshop-app/build/fluttertoast/.transforms/112570be434c9e81218f843c235a23ca/transformed/out/jars/libs/R.jar"
       resolved="com.example.FlutterToast:fluttertoast:unspecified"
-      folder="/Users/apple/flutterprojects/atomshop/build/fluttertoast/.transforms/40145b240a160ae02e0b301ef8508968/transformed/out"
+      folder="/Users/apple/flutterprojects/atomshop-app/build/fluttertoast/.transforms/112570be434c9e81218f843c235a23ca/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -17,10 +17,36 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/apple/flutterprojects/atomshop/android@@:shared_preferences_android::release"
-      jars="/Users/apple/flutterprojects/atomshop/build/shared_preferences_android/.transforms/29d7d254ddae29451d08db91c1db4e43/transformed/out/jars/classes.jar:/Users/apple/flutterprojects/atomshop/build/shared_preferences_android/.transforms/29d7d254ddae29451d08db91c1db4e43/transformed/out/jars/libs/R.jar"
+      name="/Users/apple/flutterprojects/atomshop-app/android@@:path_provider_android::release"
+      jars="/Users/apple/flutterprojects/atomshop-app/build/path_provider_android/.transforms/4af3a6ca5e32577bdb795e23851c6576/transformed/out/jars/classes.jar:/Users/apple/flutterprojects/atomshop-app/build/path_provider_android/.transforms/4af3a6ca5e32577bdb795e23851c6576/transformed/out/jars/libs/R.jar"
+      resolved="io.flutter.plugins.pathprovider:path_provider_android:unspecified"
+      folder="/Users/apple/flutterprojects/atomshop-app/build/path_provider_android/.transforms/4af3a6ca5e32577bdb795e23851c6576/transformed/out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="/Users/apple/flutterprojects/atomshop-app/android@@:shared_preferences_android::release"
+      jars="/Users/apple/flutterprojects/atomshop-app/build/shared_preferences_android/.transforms/62174e1c77a7eec2bf6109c0199b9eee/transformed/out/jars/classes.jar:/Users/apple/flutterprojects/atomshop-app/build/shared_preferences_android/.transforms/62174e1c77a7eec2bf6109c0199b9eee/transformed/out/jars/libs/R.jar"
       resolved="io.flutter.plugins.sharedpreferences:shared_preferences_android:unspecified"
-      folder="/Users/apple/flutterprojects/atomshop/build/shared_preferences_android/.transforms/29d7d254ddae29451d08db91c1db4e43/transformed/out"
+      folder="/Users/apple/flutterprojects/atomshop-app/build/shared_preferences_android/.transforms/62174e1c77a7eec2bf6109c0199b9eee/transformed/out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="/Users/apple/flutterprojects/atomshop-app/android@@:sqflite_android::release"
+      jars="/Users/apple/flutterprojects/atomshop-app/build/sqflite_android/.transforms/18e9265b50808a18fab0f61595e758b8/transformed/out/jars/classes.jar:/Users/apple/flutterprojects/atomshop-app/build/sqflite_android/.transforms/18e9265b50808a18fab0f61595e758b8/transformed/out/jars/libs/R.jar"
+      resolved="com.tekartik.sqflite:sqflite_android:unspecified"
+      folder="/Users/apple/flutterprojects/atomshop-app/build/sqflite_android/.transforms/18e9265b50808a18fab0f61595e758b8/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -314,9 +340,9 @@
       jars="/Users/apple/.gradle/caches/modules-2/files-2.1/androidx.collection/collection/1.1.0/1f27220b47669781457de0d600849a5de0e89909/collection-1.1.0.jar"
       resolved="androidx.collection:collection:1.1.0"/>
   <library
-      name="androidx.annotation:annotation-jvm:1.8.0@jar"
-      jars="/Users/apple/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation-jvm/1.8.0/b8a16fe526014b7941c1debaccaf9c5153692dbb/annotation-jvm-1.8.0.jar"
-      resolved="androidx.annotation:annotation-jvm:1.8.0"/>
+      name="androidx.annotation:annotation-jvm:1.9.1@jar"
+      jars="/Users/apple/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation-jvm/1.9.1/b17951747e38bf3986a24431b9ba0d039958aa5f/annotation-jvm-1.9.1.jar"
+      resolved="androidx.annotation:annotation-jvm:1.9.1"/>
   <library
       name="org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3@jar"
       jars="/Users/apple/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-android/1.7.3/38d9cad3a0b03a10453b56577984bdeb48edeed5/kotlinx-coroutines-android-1.7.3.jar"
@@ -326,9 +352,9 @@
       jars="/Users/apple/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.7.3/2b09627576f0989a436a00a4a54b55fa5026fb86/kotlinx-coroutines-core-jvm-1.7.3.jar"
       resolved="org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.7.3"/>
   <library
-      name="org.jetbrains.kotlin:kotlin-stdlib:1.9.22@jar"
-      jars="/Users/apple/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.9.22/d6c44cd08d8f3f9bece8101216dbe6553365c6e3/kotlin-stdlib-1.9.22.jar"
-      resolved="org.jetbrains.kotlin:kotlin-stdlib:1.9.22"/>
+      name="org.jetbrains.kotlin:kotlin-stdlib:1.9.24@jar"
+      jars="/Users/apple/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.9.24/9928532f12c66ad816a625b3f9984f8368ca6d2b/kotlin-stdlib-1.9.24.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib:1.9.24"/>
   <library
       name="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22@jar"
       jars="/Users/apple/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.8.22/b25c86d47d6b962b9cf0f8c3f320c8a10eea3dd1/kotlin-stdlib-jdk8-1.8.22.jar"
@@ -388,57 +414,6 @@
       symbolFile="R.txt"
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
-  <library
-      name="androidx.datastore:datastore-preferences-core-jvm:1.1.1@jar"
-      jars="/Users/apple/.gradle/caches/modules-2/files-2.1/androidx.datastore/datastore-preferences-core-jvm/1.1.1/e562d4a944240c0e67317f0b862da24aca3aabc/datastore-preferences-core-jvm-1.1.1.jar"
-      resolved="androidx.datastore:datastore-preferences-core-jvm:1.1.1"/>
-  <library
-      name="androidx.datastore:datastore-core-okio-jvm:1.1.1@jar"
-      jars="/Users/apple/.gradle/caches/modules-2/files-2.1/androidx.datastore/datastore-core-okio-jvm/1.1.1/cba5887aaa9316d650b3ebc667243ed3a05f4407/datastore-core-okio-jvm-1.1.1.jar"
-      resolved="androidx.datastore:datastore-core-okio-jvm:1.1.1"/>
-  <library
-      name="androidx.datastore:datastore-core-android:1.1.1@aar"
-      jars="/Users/apple/.gradle/caches/transforms-3/9441e8b274faebbfe21cf8c8f463be95/transformed/jetified-datastore-core-release/jars/classes.jar"
-      resolved="androidx.datastore:datastore-core-android:1.1.1"
-      folder="/Users/apple/.gradle/caches/transforms-3/9441e8b274faebbfe21cf8c8f463be95/transformed/jetified-datastore-core-release"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.datastore:datastore-preferences-android:1.1.1@aar"
-      jars="/Users/apple/.gradle/caches/transforms-3/0cf0dfa47f40d2ebd3407bd47f3dd25e/transformed/jetified-datastore-preferences-release/jars/classes.jar"
-      resolved="androidx.datastore:datastore-preferences-android:1.1.1"
-      folder="/Users/apple/.gradle/caches/transforms-3/0cf0dfa47f40d2ebd3407bd47f3dd25e/transformed/jetified-datastore-preferences-release"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.datastore:datastore-android:1.1.1@aar"
-      jars="/Users/apple/.gradle/caches/transforms-3/e3611af684c8af9ba655b32249084f4e/transformed/jetified-datastore-release/jars/classes.jar"
-      resolved="androidx.datastore:datastore-android:1.1.1"
-      folder="/Users/apple/.gradle/caches/transforms-3/e3611af684c8af9ba655b32249084f4e/transformed/jetified-datastore-release"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="com.squareup.okio:okio-jvm:3.4.0@jar"
-      jars="/Users/apple/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio-jvm/3.4.0/4e8bd78a52ab935ce383d0092646922154295e54/okio-jvm-3.4.0.jar"
-      resolved="com.squareup.okio:okio-jvm:3.4.0"/>
   <library
       name="androidx.preference:preference:1.2.1@aar"
       jars="/Users/apple/.gradle/caches/transforms-3/047aa7ddff6241681155a5178fa0e58d/transformed/preference-1.2.1/jars/classes.jar"
@@ -700,6 +675,53 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="androidx.datastore:datastore-preferences-core-jvm:1.1.1@jar"
+      jars="/Users/apple/.gradle/caches/modules-2/files-2.1/androidx.datastore/datastore-preferences-core-jvm/1.1.1/e562d4a944240c0e67317f0b862da24aca3aabc/datastore-preferences-core-jvm-1.1.1.jar"
+      resolved="androidx.datastore:datastore-preferences-core-jvm:1.1.1"/>
+  <library
+      name="androidx.datastore:datastore-core-okio-jvm:1.1.1@jar"
+      jars="/Users/apple/.gradle/caches/modules-2/files-2.1/androidx.datastore/datastore-core-okio-jvm/1.1.1/cba5887aaa9316d650b3ebc667243ed3a05f4407/datastore-core-okio-jvm-1.1.1.jar"
+      resolved="androidx.datastore:datastore-core-okio-jvm:1.1.1"/>
+  <library
+      name="androidx.datastore:datastore-core-android:1.1.1@aar"
+      jars="/Users/apple/.gradle/caches/transforms-3/9441e8b274faebbfe21cf8c8f463be95/transformed/jetified-datastore-core-release/jars/classes.jar"
+      resolved="androidx.datastore:datastore-core-android:1.1.1"
+      folder="/Users/apple/.gradle/caches/transforms-3/9441e8b274faebbfe21cf8c8f463be95/transformed/jetified-datastore-core-release"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.datastore:datastore-preferences-android:1.1.1@aar"
+      jars="/Users/apple/.gradle/caches/transforms-3/0cf0dfa47f40d2ebd3407bd47f3dd25e/transformed/jetified-datastore-preferences-release/jars/classes.jar"
+      resolved="androidx.datastore:datastore-preferences-android:1.1.1"
+      folder="/Users/apple/.gradle/caches/transforms-3/0cf0dfa47f40d2ebd3407bd47f3dd25e/transformed/jetified-datastore-preferences-release"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.datastore:datastore-android:1.1.1@aar"
+      jars="/Users/apple/.gradle/caches/transforms-3/e3611af684c8af9ba655b32249084f4e/transformed/jetified-datastore-release/jars/classes.jar"
+      resolved="androidx.datastore:datastore-android:1.1.1"
+      folder="/Users/apple/.gradle/caches/transforms-3/e3611af684c8af9ba655b32249084f4e/transformed/jetified-datastore-release"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.collection:collection-ktx:1.1.0@jar"
       jars="/Users/apple/.gradle/caches/modules-2/files-2.1/androidx.collection/collection-ktx/1.1.0/f807b2f366f7b75142a67d2f3c10031065b5168/collection-ktx-1.1.0.jar"
       resolved="androidx.collection:collection-ktx:1.1.0"/>
@@ -793,6 +815,10 @@
       name="org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.9.22@jar"
       jars="/Users/apple/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions-runtime/1.9.22/ee3bc0c3b55cb516ac92d6a093e1b939166b86a2/kotlin-android-extensions-runtime-1.9.22.jar"
       resolved="org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.9.22"/>
+  <library
+      name="com.squareup.okio:okio-jvm:3.4.0@jar"
+      jars="/Users/apple/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio-jvm/3.4.0/4e8bd78a52ab935ce383d0092646922154295e54/okio-jvm-3.4.0.jar"
+      resolved="com.squareup.okio:okio-jvm:3.4.0"/>
   <library
       name="com.google.guava:listenablefuture:1.0@jar"
       jars="/Users/apple/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/1.0/c949a840a6acbc5268d088e47b04177bf90b3cad/listenablefuture-1.0.jar"

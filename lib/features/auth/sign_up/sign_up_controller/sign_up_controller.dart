@@ -1,6 +1,6 @@
 import 'package:atomshop/common/utils/app_utils.dart';
 import 'package:atomshop/features/auth/login/login_view/login_view.dart';
-import 'package:atomshop/features/profile/utils/utils.dart';
+import 'package:atomshop/features/profile_feature/utils/utils.dart';
 import 'package:atomshop/network/network_manager/network_manager.dart';
 import 'package:atomshop/network/urls/app_urls.dart';
 import 'package:get/get.dart';

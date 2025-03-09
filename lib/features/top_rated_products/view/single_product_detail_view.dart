@@ -311,6 +311,7 @@ class SingleProductDetailView extends StatelessWidget {
                                   final cartController =
                                       Get.put(CartController());
                                   cartController.addToCart(
+                                      dealAmount: "2",
                                       tenureMonths: "1",
                                       productId: product.id.toString(),
                                       memoryId: controller.selectedMemory.value,

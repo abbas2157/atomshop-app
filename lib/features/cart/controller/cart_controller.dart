@@ -1,6 +1,6 @@
 import 'package:atomshop/common/utils/app_utils.dart';
 import 'package:atomshop/features/cart/model/cart_item_model.dart';
-import 'package:atomshop/features/profile/utils/utils.dart';
+import 'package:atomshop/features/profile_feature/utils/utils.dart';
 import 'package:atomshop/local_storage/local_storage_methods.dart';
 import 'package:atomshop/network/network_manager/network_manager.dart';
 import 'package:flutter/material.dart';
@@ -52,20 +52,22 @@ class CartController extends GetxController {
   /// Add Item to Cart
   void addToCart({
     required String productId,
-     int? memoryId,
-     int? color,
+    int? memoryId,
+    int? color,
     required String price,
     required String minAdvancePrice,
     required String tenureMonths,
+    required String dealAmount,
   }) async {
     try {
       Map<String, dynamic> payload = {
         "product_id": productId,
-        "memory_id":  memoryId,
+        "memory_id": memoryId,
         "color_id": color,
         "price": price,
-        "tenure_months":tenureMonths,
+        "tenure_months": tenureMonths,
         "min_advance_price": minAdvancePrice,
+        "deal_price": dealAmount,
         "user_type": AppUtils.isUserLoggedIn() ? "auth" : "guest",
         if (!AppUtils.isUserLoggedIn()) "guest_id": "abcd-6789-mkvb-8765",
         if (AppUtils.isUserLoggedIn())
@@ -90,7 +92,7 @@ class CartController extends GetxController {
     try {
       Map<String, dynamic> payload = {"cart_id": id};
       var response = await NetworkManager().postRequest("cart/remove", payload);
-       print(response);
+      print(response);
       if (response["original"]['success'] == true) {
         getCartItems(); // Refresh cart
         getCount();

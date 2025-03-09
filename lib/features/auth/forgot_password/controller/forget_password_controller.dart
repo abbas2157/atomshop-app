@@ -1,5 +1,5 @@
 import 'package:atomshop/common/utils/app_utils.dart';
-import 'package:atomshop/features/profile/utils/utils.dart';
+import 'package:atomshop/features/profile_feature/utils/utils.dart';
 import 'package:atomshop/network/network_manager/network_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

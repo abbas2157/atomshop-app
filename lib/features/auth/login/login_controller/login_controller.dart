@@ -32,6 +32,8 @@ class LoginController extends GetxController {
             .writeUserEmail(response["data"]["user"]["email"]);
                LocalStorageMethods.instance
             .writeUserId((response["data"]["user"]["id"]).toString());
+                LocalStorageMethods.instance
+            .writeUserUUID((response["data"]["user"]["uuid"]).toString());
         Get.to(() => BottomNavPage());
         return response['data']; // Return user data and token
       } else {

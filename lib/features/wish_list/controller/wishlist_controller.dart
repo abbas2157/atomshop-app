@@ -1,5 +1,5 @@
 import 'package:atomshop/common/utils/app_utils.dart';
-import 'package:atomshop/features/profile/utils/utils.dart';
+import 'package:atomshop/features/profile_feature/utils/utils.dart';
 import 'package:atomshop/features/wish_list/model/wish_list_item_model.dart';
 import 'package:atomshop/local_storage/local_storage_methods.dart';
 import 'package:atomshop/network/network_manager/network_manager.dart';

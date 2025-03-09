@@ -35,8 +35,8 @@ io.flutter.plugins.sharedpreferences.shared_preferences_android-jetified-tracing
 io.flutter.plugins.sharedpreferences.shared_preferences_android-jetified-savedstate-ktx-1.2.1-34 /Users/apple/.gradle/caches/transforms-3/eb30b97cf0c123a3aa78bfba9082ceea/transformed/jetified-savedstate-ktx-1.2.1/res
 io.flutter.plugins.sharedpreferences.shared_preferences_android-main-35 /Users/apple/.pub-cache/hosted/pub.dev/shared_preferences_android-2.4.2/android/src/main/res
 io.flutter.plugins.sharedpreferences.shared_preferences_android-release-36 /Users/apple/.pub-cache/hosted/pub.dev/shared_preferences_android-2.4.2/android/src/release/res
-io.flutter.plugins.sharedpreferences.shared_preferences_android-pngs-37 /Users/apple/flutterprojects/atomshop/build/shared_preferences_android/generated/res/pngs/release
-io.flutter.plugins.sharedpreferences.shared_preferences_android-resValues-38 /Users/apple/flutterprojects/atomshop/build/shared_preferences_android/generated/res/resValues/release
-io.flutter.plugins.sharedpreferences.shared_preferences_android-mergeReleaseResources-39 /Users/apple/flutterprojects/atomshop/build/shared_preferences_android/intermediates/incremental/release/mergeReleaseResources/merged.dir
-io.flutter.plugins.sharedpreferences.shared_preferences_android-mergeReleaseResources-40 /Users/apple/flutterprojects/atomshop/build/shared_preferences_android/intermediates/incremental/release/mergeReleaseResources/stripped.dir
-io.flutter.plugins.sharedpreferences.shared_preferences_android-merged_res-41 /Users/apple/flutterprojects/atomshop/build/shared_preferences_android/intermediates/merged_res/release
+io.flutter.plugins.sharedpreferences.shared_preferences_android-pngs-37 /Users/apple/flutterprojects/atomshop-app/build/shared_preferences_android/generated/res/pngs/release
+io.flutter.plugins.sharedpreferences.shared_preferences_android-resValues-38 /Users/apple/flutterprojects/atomshop-app/build/shared_preferences_android/generated/res/resValues/release
+io.flutter.plugins.sharedpreferences.shared_preferences_android-mergeReleaseResources-39 /Users/apple/flutterprojects/atomshop-app/build/shared_preferences_android/intermediates/incremental/release/mergeReleaseResources/merged.dir
+io.flutter.plugins.sharedpreferences.shared_preferences_android-mergeReleaseResources-40 /Users/apple/flutterprojects/atomshop-app/build/shared_preferences_android/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+io.flutter.plugins.sharedpreferences.shared_preferences_android-merged_res-41 /Users/apple/flutterprojects/atomshop-app/build/shared_preferences_android/intermediates/merged_res/release

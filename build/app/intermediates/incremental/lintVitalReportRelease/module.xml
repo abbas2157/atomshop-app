@@ -1,11 +1,11 @@
 <lint-module
     format="1"
-    dir="/Users/apple/flutterprojects/atomshop/android/app"
+    dir="/Users/apple/flutterprojects/atomshop-app/android/app"
     name=":app"
     type="APP"
     maven="android:app:"
     agpVersion="8.1.0"
-    buildFolder="/Users/apple/flutterprojects/atomshop/build/app"
+    buildFolder="/Users/apple/flutterprojects/atomshop-app/build/app"
     bootClassPath="/Users/apple/Library/Android/sdk/platforms/android-35/android.jar:/Users/apple/Library/Android/sdk/build-tools/33.0.1/core-lambda-stubs.jar"
     javaSourceLevel="1.8"
     compileTarget="android-35">

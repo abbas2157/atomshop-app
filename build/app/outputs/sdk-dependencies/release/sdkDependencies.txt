@@ -18,10 +18,10 @@ library {
   maven_library {
     groupId: "org.jetbrains.kotlin"
     artifactId: "kotlin-stdlib"
-    version: "1.9.22"
+    version: "1.9.24"
   }
   digests {
-    sha256: "j\276\024l\'\206A8\270t\314\314\376_SN>\271#\311\232\033{]EIN\345iO>\n"
+    sha256: "\205\213\220&\226\332\234\365\205\253\235\230\377\301\302q\"i\202\203T\337\351\020~7\021\260\204\243dh"
   }
   repo_index {
     value: 1
@@ -82,7 +82,7 @@ library {
   maven_library {
     groupId: "androidx.annotation"
     artifactId: "annotation"
-    version: "1.8.0"
+    version: "1.9.1"
   }
   repo_index {
   }
@@ -91,10 +91,10 @@ library {
   maven_library {
     groupId: "androidx.annotation"
     artifactId: "annotation-jvm"
-    version: "1.8.0"
+    version: "1.9.1"
   }
   digests {
-    sha256: "\232\2532m\224\222\200\t\221\205C`\254$\217I<\347\367\303\0305\0310\233x\254\351\342@\366\366"
+    sha256: "\03649\027\353\362{\251o\344\334R\261\312\327\3752\2678\373\3065[\266\315[;0]r\022\320"
   }
   repo_index {
   }
@@ -1002,7 +1002,7 @@ library {
 }
 library {
   digests {
-    sha256: "\311\365\213c\022\314\335\033\332\204I\031\206n\002\252\204\021\242O d\3655\204\205Mo\356=,\256"
+    sha256: "Mm\005\275\002\256\371F\305m\376\227\254\310\215\340\202\020^U>\265\235\bhJ=\2076\3209w"
   }
 }
 library_dependencies {
@@ -1655,6 +1655,7 @@ module_dependencies {
   dependency_index: 83
   dependency_index: 0
   dependency_index: 4
+  dependency_index: 6
   dependency_index: 49
   dependency_index: 59
   dependency_index: 63
@@ -1673,6 +1674,26 @@ repositories {
 repositories {
   maven_repo {
     url: "https://storage.googleapis.com/download.flutter.io"
+  }
+}
+repositories {
+  maven_repo {
+    url: "https://dl.google.com/dl/android/maven2/"
+  }
+}
+repositories {
+  maven_repo {
+    url: "https://repo.maven.apache.org/maven2/"
+  }
+}
+repositories {
+  maven_repo {
+    url: "https://dl.google.com/dl/android/maven2/"
+  }
+}
+repositories {
+  maven_repo {
+    url: "https://repo.maven.apache.org/maven2/"
   }
 }
 repositories {

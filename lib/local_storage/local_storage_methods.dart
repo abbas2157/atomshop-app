@@ -31,6 +31,15 @@ class LocalStorageMethods {
     return userID;
   }
 
+  Future<void> writeUserUUID(String id) async {
+    await Prefs.setString("user_uuid", id);
+  }
+
+  String? getUserUUID() {
+    String? userID = Prefs.getString("user_uuid");
+    return userID;
+  }
+
   Future<void> writeisFirstTimeOpen(bool value) async {
     await Prefs.setBool("isFirstTimeOpen", value);
   }
