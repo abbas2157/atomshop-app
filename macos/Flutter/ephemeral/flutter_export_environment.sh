@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=/Users/apple/development/flutter"
-export "FLUTTER_APPLICATION_PATH=/Users/apple/flutterprojects/atomshop"
+export "FLUTTER_APPLICATION_PATH=/Users/apple/Desktop/Work/atomshop-app"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_BUILD_DIR=build"
 export "FLUTTER_BUILD_NAME=1.0.0"

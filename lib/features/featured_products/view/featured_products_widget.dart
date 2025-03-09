@@ -109,17 +109,28 @@ class ProductCard extends StatelessWidget {
             /// Wishlist Icon
             Align(
               alignment: Alignment.topRight,
-              child: InkWell(
-                onTap: () {
-                  final controller = Get.put(WishlistController());
-                  controller.addToWishList(productId: product.id.toString());
-                },
-                child: CircleAvatar(
-                  radius: cardWidth * 0.1, // 10% of card width
-                  backgroundColor: Colors.grey.shade200,
-                  child: const Icon(Icons.favorite_border, color: Colors.white),
-                ),
-              ),
+              child: Obx(() {
+                final WishlistController controller =
+                    Get.put(WishlistController());
+
+                bool isFavorited =
+                    controller.favoriteProducts[product.id.toString()] ?? false;
+
+                return InkWell(
+                  onTap: () {
+                    // final controller = Get.put(WishlistController());
+                    controller.addToWishList(productId: product.id.toString());
+                  },
+                  child: CircleAvatar(
+                    radius: cardWidth * 0.1, // 10% of card width
+                    backgroundColor: Colors.grey.shade200,
+
+                    child: Icon(
+                        isFavorited ? Icons.favorite : Icons.favorite_border,
+                        color: isFavorited ? Colors.red : Colors.white),
+                  ),
+                );
+              }),
             ),
 
             /// Product Image

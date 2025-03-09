@@ -1,10 +1,7 @@
-import 'package:atomshop/common/constants/app_constants.dart';
 import 'package:atomshop/common/constants/image_constants.dart';
 import 'package:atomshop/common/widgets/common_button.dart';
 import 'package:atomshop/common/widgets/loading.dart';
-import 'package:atomshop/extenstion/padding_extension.dart';
 import 'package:atomshop/features/bottom_nav_bar/bottom_nav_bar_controller/bottom_nav_bar_controller.dart';
-import 'package:atomshop/features/cart/controller/cart_controller.dart';
 import 'package:atomshop/features/featured_products/view/single_product_detail_view.dart';
 import 'package:atomshop/features/wish_list/controller/wishlist_controller.dart';
 import 'package:atomshop/features/wish_list/model/wish_list_item_model.dart';

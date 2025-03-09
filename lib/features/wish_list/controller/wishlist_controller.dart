@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 class WishlistController extends GetxController {
   final RxList<WishListItemModel> wishList = <WishListItemModel>[].obs;
   final RxBool isLoading = false.obs;
+  final RxMap<String, bool> favoriteProducts = <String, bool>{}.obs;
 
   void getWishListItems() async {
     try {
@@ -48,13 +49,29 @@ class WishlistController extends GetxController {
         "product_id": productId,
       };
 
-      var response =
-          await NetworkManager().postRequest("favorites/add", payload);
-      if (response['success'] == true) {
-        showToastMessage(response['message']);
-        getCount();
+      // Check if the item is already in the favorites
+      if (favoriteProducts[productId] == true) {
+        // If it's already a favorite, remove it
+        var response =
+            await NetworkManager().postRequest("favorites/remove", payload);
+        if (response['original']['success'] == true) {
+          showToastMessage(response['original']['message']);
+          favoriteProducts[productId] = false; // Update the local state
+          getWishListItems(); // Refresh wishlist items
+          getCount();
+        } else {
+          throw Exception('Failed to remove: ${response['message']}');
+        }
       } else {
-        throw Exception('Login failed: ${response['message']}');
+        var response =
+            await NetworkManager().postRequest("favorites/add", payload);
+        if (response['success'] == true) {
+          showToastMessage(response['message']);
+          favoriteProducts[productId] = !(favoriteProducts[productId] ?? false);
+          getCount();
+        } else {
+          throw Exception('Login failed: ${response['message']}');
+        }
       }
     } catch (e) {
       debugPrint(e.toString());
