@@ -178,9 +178,25 @@ class WishListView extends StatelessWidget {
             ),
             const SizedBox(height: 4),
 
+            Text(
+              item.brand!,
+              style: AppTextStyles.bodyText1
+                  .copyWith(fontSize: 12, fontWeight: FontWeight.w500),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+            const SizedBox(height: 6),
+            Text(
+              "Available On Installment",
+              style: AppTextStyles.bodyText1.copyWith(fontSize: 12),
+              // maxLines: 1,
+              overflow: TextOverflow.visible,
+            ),
+            const SizedBox(height: 6),
+
             /// Price
             Text(
-              "RS.${item.price}",
+              "Advance: RS.${item.price}",
               style: AppTextStyles.normal.copyWith(
                 fontWeight: FontWeight.bold,
                 fontSize: cardWidth * 0.09,
