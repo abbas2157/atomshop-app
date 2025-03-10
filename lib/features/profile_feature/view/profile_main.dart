@@ -2,7 +2,9 @@ import 'package:atomshop/common/utils/app_utils.dart';
 import 'package:atomshop/features/auth/change_password/change_password.dart';
 import 'package:atomshop/features/auth/login/login_view/login_view.dart';
 import 'package:atomshop/features/bottom_nav_bar/bottom_nav_bar_controller/bottom_nav_bar_controller.dart';
+import 'package:atomshop/features/my_installments/view/installment_view.dart';
 import 'package:atomshop/features/orders/view/my_orders.dart';
+import 'package:atomshop/features/payments/view/payment_history.dart';
 import 'package:atomshop/features/profile_feature/view/personal_info.dart';
 import 'package:atomshop/local_storage/local_storage_methods.dart';
 import 'package:atomshop/style/colors/app_colors.dart';
@@ -57,39 +59,45 @@ class _ProfileMainState extends State<ProfileMain> {
                     children: [
                       Text('Account Management',
                           style: TextStyle(fontWeight: FontWeight.bold)),
-                      BuildMenuItem(
-                          title: 'My Profile',
-                          icon: Icons.person_outline,
+                      if (isUserLoggedIn) ...[
+                        BuildMenuItem(
+                            title: 'My Profile',
+                            icon: Icons.person_outline,
+                            onTap: () {
+                              Get.to(() => PersonalInfo());
+                            }),
+                        BuildMenuItem(
+                          title: 'My Orders',
+                          icon: Icons.shopping_bag_outlined, // Updated icon
                           onTap: () {
-                            Get.to(() => PersonalInfo());
-                          }),
-                      BuildMenuItem(
-                        title: 'My Orders',
-                        icon: Icons.shopping_bag_outlined, // Updated icon
-                        onTap: () {
-                          Get.to(() => OrderHistoryScreen());
-                        },
-                      ),
-                      BuildMenuItem(
-                        title: 'My Installments',
-                        icon: Icons
-                            .payments_outlined, // Represents payments or installments
-                        onTap: () {},
-                      ),
-                      BuildMenuItem(
-                        title: 'Payment History',
-                        icon: Icons
-                            .receipt_long_outlined, // Represents transaction records or payment history
-                        onTap: () {},
-                      ),
-                      BuildMenuItem(
-                        title: 'Change Password',
-                        icon: Icons
-                            .vpn_key_outlined, // Represents passwords and keys
-                        onTap: () {
-                          Get.to(() => ChangePasswordScreen());
-                        },
-                      ),
+                            Get.to(() => OrderHistoryScreen());
+                          },
+                        ),
+                        BuildMenuItem(
+                          title: 'My Installments',
+                          icon: Icons
+                              .payments_outlined, // Represents payments or installments
+                          onTap: () {
+                            Get.to(() => InstallmentHistoryScreen());
+                          },
+                        ),
+                        BuildMenuItem(
+                          title: 'Payment History',
+                          icon: Icons
+                              .receipt_long_outlined, // Represents transaction records or payment history
+                          onTap: () {
+                              Get.to(() => PaymentHistoryScreen());
+                          },
+                        ),
+                        BuildMenuItem(
+                          title: 'Change Password',
+                          icon: Icons
+                              .vpn_key_outlined, // Represents passwords and keys
+                          onTap: () {
+                            Get.to(() => ChangePasswordScreen());
+                          },
+                        ),
+                      ],
                       BuildMenuItem(
                         title: isUserLoggedIn ? 'Logout' : 'Login',
                         icon: isUserLoggedIn ? Icons.logout : Icons.login,

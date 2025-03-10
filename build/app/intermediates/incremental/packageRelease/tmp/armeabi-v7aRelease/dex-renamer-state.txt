@@ -1,4 +1,4 @@
-#Mon Mar 10 01:29:13 PKT 2025
+#Mon Mar 10 15:06:31 PKT 2025
 base.0=/Users/apple/flutterprojects/atomshop-app/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

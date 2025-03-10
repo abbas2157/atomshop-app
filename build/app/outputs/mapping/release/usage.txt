@@ -3,6 +3,36 @@ _COROUTINE.ArtificialStackFrames:
 _COROUTINE._BOUNDARY:
     public void <init>()
 _COROUTINE._CREATION
+android.support.customtabs.ICustomTabsCallback$Default
+android.support.customtabs.ICustomTabsCallback$Stub$Proxy
+android.support.customtabs.ICustomTabsCallback$Stub
+android.support.customtabs.ICustomTabsCallback$_Parcel
+android.support.customtabs.ICustomTabsCallback
+android.support.customtabs.ICustomTabsService$Default
+android.support.customtabs.ICustomTabsService$Stub$Proxy
+android.support.customtabs.ICustomTabsService$Stub
+android.support.customtabs.ICustomTabsService$_Parcel
+android.support.customtabs.ICustomTabsService
+android.support.customtabs.IEngagementSignalsCallback$Default
+android.support.customtabs.IEngagementSignalsCallback$Stub$Proxy
+android.support.customtabs.IEngagementSignalsCallback$Stub
+android.support.customtabs.IEngagementSignalsCallback$_Parcel
+android.support.customtabs.IEngagementSignalsCallback
+android.support.customtabs.IPostMessageService$Default
+android.support.customtabs.IPostMessageService$Stub$Proxy
+android.support.customtabs.IPostMessageService$Stub
+android.support.customtabs.IPostMessageService$_Parcel
+android.support.customtabs.IPostMessageService
+android.support.customtabs.trusted.ITrustedWebActivityCallback$Default
+android.support.customtabs.trusted.ITrustedWebActivityCallback$Stub$Proxy
+android.support.customtabs.trusted.ITrustedWebActivityCallback$Stub
+android.support.customtabs.trusted.ITrustedWebActivityCallback$_Parcel
+android.support.customtabs.trusted.ITrustedWebActivityCallback
+android.support.customtabs.trusted.ITrustedWebActivityService$Default
+android.support.customtabs.trusted.ITrustedWebActivityService$Stub$Proxy
+android.support.customtabs.trusted.ITrustedWebActivityService$Stub
+android.support.customtabs.trusted.ITrustedWebActivityService$_Parcel
+android.support.customtabs.trusted.ITrustedWebActivityService
 android.support.v4.app.INotificationSideChannel$Default
 android.support.v4.app.INotificationSideChannel$Stub$Proxy
 android.support.v4.app.INotificationSideChannel$Stub
@@ -2566,6 +2596,300 @@ androidx.asynclayoutinflater.view.AsyncLayoutInflater$InflateRequest
 androidx.asynclayoutinflater.view.AsyncLayoutInflater$InflateThread
 androidx.asynclayoutinflater.view.AsyncLayoutInflater$OnInflateFinishedListener
 androidx.asynclayoutinflater.view.AsyncLayoutInflater
+androidx.browser.R$color
+androidx.browser.R$dimen:
+    private void <init>()
+androidx.browser.R$id
+androidx.browser.R$layout
+androidx.browser.R$string
+androidx.browser.R$xml
+androidx.browser.R
+androidx.browser.browseractions.BrowserActionItem
+androidx.browser.browseractions.BrowserActionsFallbackMenuAdapter$1
+androidx.browser.browseractions.BrowserActionsFallbackMenuAdapter$2
+androidx.browser.browseractions.BrowserActionsFallbackMenuAdapter$ViewHolderItem
+androidx.browser.browseractions.BrowserActionsFallbackMenuAdapter
+androidx.browser.browseractions.BrowserActionsFallbackMenuDialog$1
+androidx.browser.browseractions.BrowserActionsFallbackMenuDialog
+androidx.browser.browseractions.BrowserActionsFallbackMenuUi$1
+androidx.browser.browseractions.BrowserActionsFallbackMenuUi$2
+androidx.browser.browseractions.BrowserActionsFallbackMenuUi$3
+androidx.browser.browseractions.BrowserActionsFallbackMenuUi$BrowserActionsFallMenuUiListener
+androidx.browser.browseractions.BrowserActionsFallbackMenuUi
+androidx.browser.browseractions.BrowserActionsIntent$BrowserActionsFallDialogListener
+androidx.browser.browseractions.BrowserActionsIntent$BrowserActionsItemId
+androidx.browser.browseractions.BrowserActionsIntent$BrowserActionsUrlType
+androidx.browser.browseractions.BrowserActionsIntent$Builder
+androidx.browser.browseractions.BrowserActionsIntent
+androidx.browser.browseractions.BrowserServiceFileProvider$1
+androidx.browser.browseractions.BrowserServiceFileProvider$FileCleanupTask
+androidx.browser.browseractions.BrowserServiceFileProvider$FileSaveTask
+androidx.browser.browseractions.BrowserServiceFileProvider
+androidx.browser.customtabs.Api33Impl
+androidx.browser.customtabs.CustomTabColorSchemeParams$Builder:
+    public androidx.browser.customtabs.CustomTabColorSchemeParams$Builder setNavigationBarColor(int)
+    public androidx.browser.customtabs.CustomTabColorSchemeParams$Builder setNavigationBarDividerColor(int)
+    public androidx.browser.customtabs.CustomTabColorSchemeParams$Builder setSecondaryToolbarColor(int)
+    public androidx.browser.customtabs.CustomTabColorSchemeParams$Builder setToolbarColor(int)
+androidx.browser.customtabs.CustomTabColorSchemeParams:
+    static androidx.browser.customtabs.CustomTabColorSchemeParams fromBundle(android.os.Bundle)
+    androidx.browser.customtabs.CustomTabColorSchemeParams withDefaults(androidx.browser.customtabs.CustomTabColorSchemeParams)
+androidx.browser.customtabs.CustomTabsCallback$ActivityLayoutState
+androidx.browser.customtabs.CustomTabsCallback
+androidx.browser.customtabs.CustomTabsClient$1
+androidx.browser.customtabs.CustomTabsClient$2$10
+androidx.browser.customtabs.CustomTabsClient$2$1
+androidx.browser.customtabs.CustomTabsClient$2$2
+androidx.browser.customtabs.CustomTabsClient$2$3
+androidx.browser.customtabs.CustomTabsClient$2$4
+androidx.browser.customtabs.CustomTabsClient$2$5
+androidx.browser.customtabs.CustomTabsClient$2$6
+androidx.browser.customtabs.CustomTabsClient$2$7
+androidx.browser.customtabs.CustomTabsClient$2$8
+androidx.browser.customtabs.CustomTabsClient$2$9
+androidx.browser.customtabs.CustomTabsClient$2
+androidx.browser.customtabs.CustomTabsClient:
+    private static final java.lang.String TAG
+    private final android.content.Context mApplicationContext
+    private final android.support.customtabs.ICustomTabsService mService
+    private final android.content.ComponentName mServiceComponentName
+    void <init>(android.support.customtabs.ICustomTabsService,android.content.ComponentName,android.content.Context)
+    public androidx.browser.customtabs.CustomTabsSession attachSession(androidx.browser.customtabs.CustomTabsSession$PendingSession)
+    public static boolean bindCustomTabsService(android.content.Context,java.lang.String,androidx.browser.customtabs.CustomTabsServiceConnection)
+    public static boolean bindCustomTabsServicePreservePriority(android.content.Context,java.lang.String,androidx.browser.customtabs.CustomTabsServiceConnection)
+    public static boolean connectAndInitialize(android.content.Context,java.lang.String)
+    private android.support.customtabs.ICustomTabsCallback$Stub createCallbackWrapper(androidx.browser.customtabs.CustomTabsCallback)
+    private static android.app.PendingIntent createSessionId(android.content.Context,int)
+    public android.os.Bundle extraCommand(java.lang.String,android.os.Bundle)
+    public static androidx.browser.customtabs.CustomTabsSession$PendingSession newPendingSession(android.content.Context,androidx.browser.customtabs.CustomTabsCallback,int)
+    public androidx.browser.customtabs.CustomTabsSession newSession(androidx.browser.customtabs.CustomTabsCallback)
+    public androidx.browser.customtabs.CustomTabsSession newSession(androidx.browser.customtabs.CustomTabsCallback,int)
+    private androidx.browser.customtabs.CustomTabsSession newSessionInternal(androidx.browser.customtabs.CustomTabsCallback,android.app.PendingIntent)
+    public boolean warmup(long)
+androidx.browser.customtabs.CustomTabsFeatures$CustomTabsFeature
+androidx.browser.customtabs.CustomTabsFeatures
+androidx.browser.customtabs.CustomTabsIntent$ActivityHeightResizeBehavior
+androidx.browser.customtabs.CustomTabsIntent$ActivitySideSheetDecorationType
+androidx.browser.customtabs.CustomTabsIntent$ActivitySideSheetPosition
+androidx.browser.customtabs.CustomTabsIntent$ActivitySideSheetRoundedCornersPosition
+androidx.browser.customtabs.CustomTabsIntent$Api21Impl
+androidx.browser.customtabs.CustomTabsIntent$Api23Impl:
+    private void <init>()
+androidx.browser.customtabs.CustomTabsIntent$Api24Impl:
+    private void <init>()
+androidx.browser.customtabs.CustomTabsIntent$Api34Impl:
+    private void <init>()
+androidx.browser.customtabs.CustomTabsIntent$Builder:
+    public void <init>(androidx.browser.customtabs.CustomTabsSession)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder addDefaultShareMenuItem()
+    public androidx.browser.customtabs.CustomTabsIntent$Builder addMenuItem(java.lang.String,android.app.PendingIntent)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder addToolbarItem(int,android.graphics.Bitmap,java.lang.String,android.app.PendingIntent)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder enableUrlBarHiding()
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setActionButton(android.graphics.Bitmap,java.lang.String,android.app.PendingIntent)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setActionButton(android.graphics.Bitmap,java.lang.String,android.app.PendingIntent,boolean)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setActivitySideSheetBreakpointDp(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setActivitySideSheetDecorationType(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setActivitySideSheetMaximizationEnabled(boolean)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setActivitySideSheetPosition(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setActivitySideSheetRoundedCornersPosition(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setBackgroundInteractionEnabled(boolean)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setBookmarksButtonEnabled(boolean)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setCloseButtonIcon(android.graphics.Bitmap)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setCloseButtonPosition(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setColorScheme(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setColorSchemeParams(int,androidx.browser.customtabs.CustomTabColorSchemeParams)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setDefaultColorSchemeParams(androidx.browser.customtabs.CustomTabColorSchemeParams)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setDefaultShareMenuItemEnabled(boolean)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setDownloadButtonEnabled(boolean)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setExitAnimations(android.content.Context,int,int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setInitialActivityHeightPx(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setInitialActivityHeightPx(int,int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setInitialActivityWidthPx(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setInstantAppsEnabled(boolean)
+    private void setLanguageTag(java.util.Locale)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setNavigationBarColor(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setNavigationBarDividerColor(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setPendingSession(androidx.browser.customtabs.CustomTabsSession$PendingSession)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setSecondaryToolbarColor(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setSecondaryToolbarSwipeUpGesture(android.app.PendingIntent)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setSecondaryToolbarViews(android.widget.RemoteViews,int[],android.app.PendingIntent)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setSendToExternalDefaultHandlerEnabled(boolean)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setSession(androidx.browser.customtabs.CustomTabsSession)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setShareIdentityEnabled(boolean)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setShareState(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setStartAnimations(android.content.Context,int,int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setToolbarColor(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setToolbarCornerRadiusDp(int)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setTranslateLocale(java.util.Locale)
+    public androidx.browser.customtabs.CustomTabsIntent$Builder setUrlBarHidingEnabled(boolean)
+androidx.browser.customtabs.CustomTabsIntent$CloseButtonPosition
+androidx.browser.customtabs.CustomTabsIntent$ColorScheme
+androidx.browser.customtabs.CustomTabsIntent$ShareState
+androidx.browser.customtabs.CustomTabsIntent:
+    public static final int ACTIVITY_HEIGHT_ADJUSTABLE
+    public static final int ACTIVITY_HEIGHT_DEFAULT
+    public static final int ACTIVITY_HEIGHT_FIXED
+    private static final int ACTIVITY_HEIGHT_MAX
+    public static final int ACTIVITY_SIDE_SHEET_DECORATION_TYPE_DEFAULT
+    public static final int ACTIVITY_SIDE_SHEET_DECORATION_TYPE_DIVIDER
+    private static final int ACTIVITY_SIDE_SHEET_DECORATION_TYPE_MAX
+    public static final int ACTIVITY_SIDE_SHEET_DECORATION_TYPE_NONE
+    public static final int ACTIVITY_SIDE_SHEET_DECORATION_TYPE_SHADOW
+    public static final int ACTIVITY_SIDE_SHEET_POSITION_DEFAULT
+    public static final int ACTIVITY_SIDE_SHEET_POSITION_END
+    private static final int ACTIVITY_SIDE_SHEET_POSITION_MAX
+    public static final int ACTIVITY_SIDE_SHEET_POSITION_START
+    public static final int ACTIVITY_SIDE_SHEET_ROUNDED_CORNERS_POSITION_DEFAULT
+    private static final int ACTIVITY_SIDE_SHEET_ROUNDED_CORNERS_POSITION_MAX
+    public static final int ACTIVITY_SIDE_SHEET_ROUNDED_CORNERS_POSITION_NONE
+    public static final int ACTIVITY_SIDE_SHEET_ROUNDED_CORNERS_POSITION_TOP
+    public static final int CLOSE_BUTTON_POSITION_DEFAULT
+    public static final int CLOSE_BUTTON_POSITION_END
+    private static final int CLOSE_BUTTON_POSITION_MAX
+    public static final int CLOSE_BUTTON_POSITION_START
+    public static final int COLOR_SCHEME_DARK
+    public static final int COLOR_SCHEME_LIGHT
+    private static final int COLOR_SCHEME_MAX
+    public static final int COLOR_SCHEME_SYSTEM
+    public static final java.lang.String EXTRA_ACTION_BUTTON_BUNDLE
+    public static final java.lang.String EXTRA_ACTIVITY_HEIGHT_RESIZE_BEHAVIOR
+    public static final java.lang.String EXTRA_ACTIVITY_SIDE_SHEET_BREAKPOINT_DP
+    public static final java.lang.String EXTRA_ACTIVITY_SIDE_SHEET_DECORATION_TYPE
+    public static final java.lang.String EXTRA_ACTIVITY_SIDE_SHEET_ENABLE_MAXIMIZATION
+    public static final java.lang.String EXTRA_ACTIVITY_SIDE_SHEET_POSITION
+    public static final java.lang.String EXTRA_ACTIVITY_SIDE_SHEET_ROUNDED_CORNERS_POSITION
+    public static final java.lang.String EXTRA_CLOSE_BUTTON_ICON
+    public static final java.lang.String EXTRA_CLOSE_BUTTON_POSITION
+    public static final java.lang.String EXTRA_COLOR_SCHEME
+    public static final java.lang.String EXTRA_COLOR_SCHEME_PARAMS
+    public static final java.lang.String EXTRA_DEFAULT_SHARE_MENU_ITEM
+    public static final java.lang.String EXTRA_DISABLE_BACKGROUND_INTERACTION
+    public static final java.lang.String EXTRA_DISABLE_BOOKMARKS_BUTTON
+    public static final java.lang.String EXTRA_DISABLE_DOWNLOAD_BUTTON
+    public static final java.lang.String EXTRA_ENABLE_INSTANT_APPS
+    public static final java.lang.String EXTRA_ENABLE_URLBAR_HIDING
+    public static final java.lang.String EXTRA_EXIT_ANIMATION_BUNDLE
+    public static final java.lang.String EXTRA_INITIAL_ACTIVITY_HEIGHT_PX
+    public static final java.lang.String EXTRA_INITIAL_ACTIVITY_WIDTH_PX
+    public static final java.lang.String EXTRA_MENU_ITEMS
+    public static final java.lang.String EXTRA_NAVIGATION_BAR_COLOR
+    public static final java.lang.String EXTRA_NAVIGATION_BAR_DIVIDER_COLOR
+    public static final java.lang.String EXTRA_REMOTEVIEWS
+    public static final java.lang.String EXTRA_REMOTEVIEWS_CLICKED_ID
+    public static final java.lang.String EXTRA_REMOTEVIEWS_PENDINGINTENT
+    public static final java.lang.String EXTRA_REMOTEVIEWS_VIEW_IDS
+    public static final java.lang.String EXTRA_SECONDARY_TOOLBAR_COLOR
+    public static final java.lang.String EXTRA_SECONDARY_TOOLBAR_SWIPE_UP_GESTURE
+    public static final java.lang.String EXTRA_SEND_TO_EXTERNAL_DEFAULT_HANDLER
+    public static final java.lang.String EXTRA_SESSION
+    public static final java.lang.String EXTRA_SESSION_ID
+    public static final java.lang.String EXTRA_SHARE_STATE
+    public static final java.lang.String EXTRA_TINT_ACTION_BUTTON
+    public static final java.lang.String EXTRA_TITLE_VISIBILITY_STATE
+    public static final java.lang.String EXTRA_TOOLBAR_COLOR
+    public static final java.lang.String EXTRA_TOOLBAR_CORNER_RADIUS_DP
+    public static final java.lang.String EXTRA_TOOLBAR_ITEMS
+    public static final java.lang.String EXTRA_TRANSLATE_LANGUAGE_TAG
+    private static final java.lang.String EXTRA_USER_OPT_OUT_FROM_CUSTOM_TABS
+    private static final java.lang.String HTTP_ACCEPT_LANGUAGE
+    public static final java.lang.String KEY_DESCRIPTION
+    public static final java.lang.String KEY_ICON
+    public static final java.lang.String KEY_ID
+    public static final java.lang.String KEY_MENU_ITEM_TITLE
+    public static final java.lang.String KEY_PENDING_INTENT
+    private static final int MAX_TOOLBAR_CORNER_RADIUS_DP
+    private static final int MAX_TOOLBAR_ITEMS
+    public static final int NO_TITLE
+    public static final int SHARE_STATE_DEFAULT
+    private static final int SHARE_STATE_MAX
+    public static final int SHARE_STATE_OFF
+    public static final int SHARE_STATE_ON
+    public static final int SHOW_PAGE_TITLE
+    public static final int TOOLBAR_ACTION_BUTTON_ID
+    public static int getActivityResizeBehavior(android.content.Intent)
+    public static int getActivitySideSheetBreakpointDp(android.content.Intent)
+    public static int getActivitySideSheetDecorationType(android.content.Intent)
+    public static int getActivitySideSheetPosition(android.content.Intent)
+    public static int getActivitySideSheetRoundedCornersPosition(android.content.Intent)
+    public static int getCloseButtonPosition(android.content.Intent)
+    public static androidx.browser.customtabs.CustomTabColorSchemeParams getColorSchemeParams(android.content.Intent,int)
+    public static int getInitialActivityHeightPx(android.content.Intent)
+    public static int getInitialActivityWidthPx(android.content.Intent)
+    private static java.util.Locale getLocaleForLanguageTag(android.content.Intent)
+    public static int getMaxToolbarItems()
+    public static android.app.PendingIntent getSecondaryToolbarSwipeUpGesture(android.content.Intent)
+    public static int getToolbarCornerRadiusDp(android.content.Intent)
+    public static java.util.Locale getTranslateLocale(android.content.Intent)
+    public static boolean isActivitySideSheetMaximizationEnabled(android.content.Intent)
+    public static boolean isBackgroundInteractionEnabled(android.content.Intent)
+    public static boolean isBookmarksButtonEnabled(android.content.Intent)
+    public static boolean isDownloadButtonEnabled(android.content.Intent)
+    public static boolean isSendToExternalDefaultHandlerEnabled(android.content.Intent)
+    public static android.content.Intent setAlwaysUseBrowserUI(android.content.Intent)
+    public static boolean shouldAlwaysUseBrowserUI(android.content.Intent)
+androidx.browser.customtabs.CustomTabsService$1
+androidx.browser.customtabs.CustomTabsService$FilePurpose
+androidx.browser.customtabs.CustomTabsService$Relation
+androidx.browser.customtabs.CustomTabsService$Result
+androidx.browser.customtabs.CustomTabsService
+androidx.browser.customtabs.CustomTabsServiceConnection$1
+androidx.browser.customtabs.CustomTabsServiceConnection
+androidx.browser.customtabs.CustomTabsSession$1
+androidx.browser.customtabs.CustomTabsSession$2
+androidx.browser.customtabs.CustomTabsSession$MockSession
+androidx.browser.customtabs.CustomTabsSession$PendingSession
+androidx.browser.customtabs.CustomTabsSession
+androidx.browser.customtabs.CustomTabsSessionToken$1
+androidx.browser.customtabs.CustomTabsSessionToken$MockCallback
+androidx.browser.customtabs.CustomTabsSessionToken
+androidx.browser.customtabs.EngagementSignalsCallback
+androidx.browser.customtabs.EngagementSignalsCallbackRemote
+androidx.browser.customtabs.ExperimentalMinimizationCallback
+androidx.browser.customtabs.PostMessageBackend
+androidx.browser.customtabs.PostMessageService$1
+androidx.browser.customtabs.PostMessageService
+androidx.browser.customtabs.PostMessageServiceConnection
+androidx.browser.customtabs.TrustedWebUtils
+androidx.browser.trusted.ConnectionHolder$WrapperFactory
+androidx.browser.trusted.ConnectionHolder
+androidx.browser.trusted.FutureUtils
+androidx.browser.trusted.NotificationApiHelperForM
+androidx.browser.trusted.NotificationApiHelperForO
+androidx.browser.trusted.PackageIdentityUtils$Api28Implementation
+androidx.browser.trusted.PackageIdentityUtils$Pre28Implementation
+androidx.browser.trusted.PackageIdentityUtils$SignaturesCompat
+androidx.browser.trusted.PackageIdentityUtils
+androidx.browser.trusted.ScreenOrientation$LockType
+androidx.browser.trusted.ScreenOrientation
+androidx.browser.trusted.Token
+androidx.browser.trusted.TokenContents
+androidx.browser.trusted.TokenStore
+androidx.browser.trusted.TrustedWebActivityCallback
+androidx.browser.trusted.TrustedWebActivityCallbackRemote
+androidx.browser.trusted.TrustedWebActivityDisplayMode$DefaultMode
+androidx.browser.trusted.TrustedWebActivityDisplayMode$ImmersiveMode
+androidx.browser.trusted.TrustedWebActivityDisplayMode
+androidx.browser.trusted.TrustedWebActivityIntent
+androidx.browser.trusted.TrustedWebActivityIntentBuilder
+androidx.browser.trusted.TrustedWebActivityService$1
+androidx.browser.trusted.TrustedWebActivityService
+androidx.browser.trusted.TrustedWebActivityServiceConnection$1
+androidx.browser.trusted.TrustedWebActivityServiceConnection$ActiveNotificationsArgs
+androidx.browser.trusted.TrustedWebActivityServiceConnection$CancelNotificationArgs
+androidx.browser.trusted.TrustedWebActivityServiceConnection$NotificationsEnabledArgs
+androidx.browser.trusted.TrustedWebActivityServiceConnection$NotifyNotificationArgs
+androidx.browser.trusted.TrustedWebActivityServiceConnection$ResultArgs
+androidx.browser.trusted.TrustedWebActivityServiceConnection
+androidx.browser.trusted.TrustedWebActivityServiceConnectionPool$BindToServiceAsyncTask
+androidx.browser.trusted.TrustedWebActivityServiceConnectionPool
+androidx.browser.trusted.sharing.ShareData
+androidx.browser.trusted.sharing.ShareTarget$EncodingType
+androidx.browser.trusted.sharing.ShareTarget$FileFormField
+androidx.browser.trusted.sharing.ShareTarget$Params
+androidx.browser.trusted.sharing.ShareTarget$RequestMethod
+androidx.browser.trusted.sharing.ShareTarget
+androidx.browser.trusted.splashscreens.SplashScreenParamKey
+androidx.browser.trusted.splashscreens.SplashScreenVersion
 androidx.collection.ArrayMap:
     public void <init>(androidx.collection.SimpleArrayMap)
     public boolean containsAll(java.util.Collection)
@@ -2792,9 +3116,19 @@ androidx.core.app.AlarmManagerCompat
 androidx.core.app.AppComponentFactory
 androidx.core.app.AppLaunchChecker
 androidx.core.app.AppLocalesStorageHelper
-androidx.core.app.AppOpsManagerCompat$Api23Impl
-androidx.core.app.AppOpsManagerCompat$Api29Impl
-androidx.core.app.AppOpsManagerCompat
+androidx.core.app.AppOpsManagerCompat$Api23Impl:
+    private void <init>()
+androidx.core.app.AppOpsManagerCompat$Api29Impl:
+    private void <init>()
+androidx.core.app.AppOpsManagerCompat:
+    public static final int MODE_ALLOWED
+    public static final int MODE_DEFAULT
+    public static final int MODE_ERRORED
+    public static final int MODE_IGNORED
+    private void <init>()
+    public static int noteOp(android.content.Context,java.lang.String,int,java.lang.String)
+    public static int noteOpNoThrow(android.content.Context,java.lang.String,int,java.lang.String)
+    public static int noteProxyOp(android.content.Context,java.lang.String,java.lang.String)
 androidx.core.app.BundleCompat
 androidx.core.app.ComponentActivity$ExtraData
 androidx.core.app.ComponentActivity
@@ -2995,11 +3329,13 @@ androidx.core.content.ContextCompat$Api21Impl:
     private void <init>()
 androidx.core.content.ContextCompat$Api23Impl
 androidx.core.content.ContextCompat$Api24Impl
-androidx.core.content.ContextCompat$Api26Impl
+androidx.core.content.ContextCompat$Api26Impl:
+    private void <init>()
 androidx.core.content.ContextCompat$Api28Impl:
     private void <init>()
 androidx.core.content.ContextCompat$Api30Impl
-androidx.core.content.ContextCompat$Api33Impl
+androidx.core.content.ContextCompat$Api33Impl:
+    private void <init>()
 androidx.core.content.ContextCompat$LegacyServiceMapHolder
 androidx.core.content.ContextCompat$RegisterReceiverFlags
 androidx.core.content.ContextCompat:
@@ -3027,12 +3363,8 @@ androidx.core.content.ContextCompat:
     public static java.lang.Object getSystemService(android.content.Context,java.lang.Class)
     public static java.lang.String getSystemServiceName(android.content.Context,java.lang.Class)
     public static boolean isDeviceProtectedStorage(android.content.Context)
-    static java.lang.String obtainAndCheckReceiverPermission(android.content.Context)
-    public static android.content.Intent registerReceiver(android.content.Context,android.content.BroadcastReceiver,android.content.IntentFilter,int)
-    public static android.content.Intent registerReceiver(android.content.Context,android.content.BroadcastReceiver,android.content.IntentFilter,java.lang.String,android.os.Handler,int)
     public static boolean startActivities(android.content.Context,android.content.Intent[])
     public static boolean startActivities(android.content.Context,android.content.Intent[],android.os.Bundle)
-    public static void startActivity(android.content.Context,android.content.Intent,android.os.Bundle)
     public static void startForegroundService(android.content.Context,android.content.Intent)
 androidx.core.content.ContextKt
 androidx.core.content.FileProvider$Api21Impl
@@ -3054,7 +3386,13 @@ androidx.core.content.PackageManagerCompat$Api30Impl
 androidx.core.content.PackageManagerCompat$UnusedAppRestrictionsStatus
 androidx.core.content.PackageManagerCompat
 androidx.core.content.PermissionChecker$PermissionResult
-androidx.core.content.PermissionChecker
+androidx.core.content.PermissionChecker:
+    public static final int PERMISSION_DENIED
+    public static final int PERMISSION_DENIED_APP_OP
+    public static final int PERMISSION_GRANTED
+    private void <init>()
+    public static int checkCallingOrSelfPermission(android.content.Context,java.lang.String)
+    public static int checkCallingPermission(android.content.Context,java.lang.String,java.lang.String)
 androidx.core.content.SharedPreferencesCompat$EditorCompat$Helper
 androidx.core.content.SharedPreferencesCompat$EditorCompat
 androidx.core.content.SharedPreferencesCompat
@@ -10020,6 +10358,22 @@ io.flutter.plugins.sharedpreferences.SharedPreferencesPluginKt:
     public static final java.lang.String LIST_PREFIX
     public static final java.lang.String SHARED_PREFERENCES_NAME
     public static final java.lang.String TAG
+io.flutter.plugins.urllauncher.BuildConfig
+io.flutter.plugins.urllauncher.Messages$BrowserOptions$Builder
+io.flutter.plugins.urllauncher.Messages$CanIgnoreReturnValue
+io.flutter.plugins.urllauncher.Messages$WebViewOptions$Builder
+io.flutter.plugins.urllauncher.Messages:
+    public void <init>()
+io.flutter.plugins.urllauncher.R
+io.flutter.plugins.urllauncher.UrlLauncher:
+    private static final java.lang.String TAG
+io.flutter.plugins.urllauncher.UrlLauncherPlugin:
+    private static final java.lang.String TAG
+io.flutter.plugins.urllauncher.WebViewActivity:
+    public static final java.lang.String ACTION_CLOSE
+    static final java.lang.String ENABLE_DOM_EXTRA
+    static final java.lang.String ENABLE_JS_EXTRA
+    static final java.lang.String URL_EXTRA
 io.flutter.util.HandlerCompat:
     public void <init>()
 io.flutter.util.PathUtils:
@@ -18486,6 +18840,7 @@ androidx.appcompat.widget.AppCompatTextClassifierHelper:
     public static android.view.textclassifier.TextClassifier getTextClassifier()
     public final boolean hasArgument()
     public static boolean isInTransaction()
+    public static void launchUrl()
     public final void onTypefaceRequestFailed()
     public final void onTypefaceRetrieved()
     public static android.view.PointerIcon resolveSystemCursor()
@@ -19098,6 +19453,12 @@ androidx.arch.core.internal.SafeIterableMap$ListIterator:
     public abstract androidx.arch.core.internal.SafeIterableMap$Entry nextNode()
 androidx.arch.core.internal.SafeIterableMap$SupportRemove
 androidx.arch.core.internal.SafeIterableMap
+androidx.browser.R$dimen
+androidx.browser.customtabs.CustomTabColorSchemeParams$Builder
+androidx.browser.customtabs.CustomTabColorSchemeParams
+androidx.browser.customtabs.CustomTabsClient
+androidx.browser.customtabs.CustomTabsIntent$Builder
+androidx.browser.customtabs.CustomTabsIntent
 androidx.collection.ArrayMap$1
 androidx.collection.ArrayMap:
     public void <init>(int)
@@ -19217,6 +19578,7 @@ androidx.core.R$styleable:
     public static final int GradientColor_android_startY
     public static final int GradientColor_android_tileMode
     public static final int GradientColor_android_type
+androidx.core.app.AppOpsManagerCompat
 androidx.core.app.CoreComponentFactory$$InternalSyntheticThrowCCEIfNotNull$8$63f81007c039b90f803abbc92d2dc4a9b588da3cd2b16cb150e1e43c92db0ff5$0
 androidx.core.app.CoreComponentFactory$CompatWrapped
 androidx.core.app.CoreComponentFactory:
@@ -19225,7 +19587,9 @@ androidx.core.content.ContextCompat:
     public static final java.lang.Object sSync
     public static void <clinit>()
     public static android.graphics.drawable.Drawable getDrawable()
+    public static java.lang.String obtainAndCheckReceiverPermission(android.content.Context)
 androidx.core.content.OnConfigurationChangedProvider
+androidx.core.content.PermissionChecker
 androidx.core.content.res.CamColor:
     public final float mM
     public final float mQ
@@ -19599,7 +19963,59 @@ androidx.core.view.WindowInsetsCompat$Impl:
     public androidx.core.graphics.Insets getSystemGestureInsets()
     public androidx.core.graphics.Insets getTappableElementInsets()
     public void setRootViewData(androidx.core.graphics.Insets)
-androidx.core.view.WindowInsetsCompat$Type
+androidx.core.view.WindowInsetsCompat$Type:
+    public static final androidx.datastore.preferences.core.Preferences$Key booleanKey(java.lang.String)
+    public static int captionBar()
+    public static void computeScrollOffset(androidx.recyclerview.widget.RecyclerView$State,android.view.View,android.view.View,androidx.recyclerview.widget.RecyclerView$LayoutManager)
+    public static android.widget.EdgeEffect create(android.content.Context,android.util.AttributeSet)
+    public static android.view.animation.Interpolator createInterpolatorFromXml()
+    public static int displayCutout()
+    public static final androidx.datastore.preferences.core.Preferences$Key doubleKey(java.lang.String)
+    public static void endSection()
+    public static java.lang.RuntimeException error()
+    public abstract boolean getBoolean()
+    public static int getDefaultSharedPreferencesMode()
+    public abstract android.content.SharedPreferences$Editor getEditor()
+    public abstract int getInt()
+    public abstract androidx.preference.PreferenceManager$OnNavigateToScreenListener getOnNavigateToScreenListener()
+    public abstract androidx.preference.PreferenceManager$OnPreferenceTreeClickListener getOnPreferenceTreeClickListener()
+    public abstract androidx.core.view.WindowInsetsCompat$Type getPreferenceDataStore()
+    public abstract android.content.SharedPreferences getSharedPreferences()
+    public abstract java.lang.String getString()
+    public abstract int getTargetPosition()
+    public static int ime()
+    public static int indexOf()
+    public abstract boolean isPendingInitialRun()
+    public abstract boolean isRunning()
+    public static android.view.animation.Interpolator loadInterpolator()
+    public static final androidx.datastore.preferences.core.Preferences$Key longKey(java.lang.String)
+    public static int mandatorySystemGestures()
+    public static int navigationBars()
+    public abstract void onAnimation()
+    public abstract void onChildAttachedToWindow()
+    public static void onPull()
+    public abstract void putBoolean()
+    public abstract void putInt()
+    public abstract void putString()
+    public static java.lang.String readString(java.io.ByteArrayInputStream,int)
+    public static long readUInt32()
+    public static int readUInt8(java.io.InputStream)
+    public static void setLineHeight(android.widget.TextView,int)
+    public static void setPrecomputedText(android.widget.TextView)
+    public abstract void setTargetPosition()
+    public abstract boolean shouldCommit()
+    public abstract void showDialog()
+    public static int statusBars()
+    public abstract void stop()
+    public static final androidx.datastore.preferences.core.Preferences$Key stringKey(java.lang.String)
+    public static int systemGestures()
+    public static int tappableElement()
+    public static int utf8Length(java.lang.String)
+    public static void w()
+    public static void writeCompressed(java.io.ByteArrayOutputStream,byte[])
+    public static void writeString(java.io.ByteArrayOutputStream,java.lang.String)
+    public static void writeUInt32()
+    public static void writeUInt8(java.io.ByteArrayOutputStream,int)
 androidx.core.view.WindowInsetsCompat$TypeImpl30$$InternalSyntheticApiModelOutline$2$b589ba04317a3b31c3fe73f4bd3f53d07e89d65fd2d5125cc106790ac25bedc3$0
 androidx.core.view.WindowInsetsCompat$TypeImpl30$$InternalSyntheticApiModelOutline$2$b589ba04317a3b31c3fe73f4bd3f53d07e89d65fd2d5125cc106790ac25bedc3$1
 androidx.core.view.WindowInsetsCompat$TypeImpl30$$InternalSyntheticApiModelOutline$2$b589ba04317a3b31c3fe73f4bd3f53d07e89d65fd2d5125cc106790ac25bedc3$2
@@ -19778,51 +20194,7 @@ androidx.core.widget.AutoScrollHelper$ClampedScroller:
     public static void start()
 androidx.core.widget.AutoScrollHelper$ScrollAnimationRunnable
 androidx.core.widget.AutoScrollHelper
-androidx.core.widget.EdgeEffectCompat:
-    public static final androidx.datastore.preferences.core.Preferences$Key booleanKey(java.lang.String)
-    public static void computeScrollOffset(androidx.recyclerview.widget.RecyclerView$State,android.view.View,android.view.View,androidx.recyclerview.widget.RecyclerView$LayoutManager)
-    public static android.widget.EdgeEffect create(android.content.Context,android.util.AttributeSet)
-    public static android.view.animation.Interpolator createInterpolatorFromXml()
-    public static final androidx.datastore.preferences.core.Preferences$Key doubleKey(java.lang.String)
-    public static void endSection()
-    public static java.lang.RuntimeException error()
-    public abstract boolean getBoolean()
-    public static int getDefaultSharedPreferencesMode()
-    public abstract android.content.SharedPreferences$Editor getEditor()
-    public abstract int getInt()
-    public abstract androidx.preference.PreferenceManager$OnNavigateToScreenListener getOnNavigateToScreenListener()
-    public abstract androidx.preference.PreferenceManager$OnPreferenceTreeClickListener getOnPreferenceTreeClickListener()
-    public abstract androidx.core.widget.EdgeEffectCompat getPreferenceDataStore()
-    public abstract android.content.SharedPreferences getSharedPreferences()
-    public abstract java.lang.String getString()
-    public abstract int getTargetPosition()
-    public static boolean isEmpty(java.lang.CharSequence)
-    public abstract boolean isPendingInitialRun()
-    public abstract boolean isRunning()
-    public static android.view.animation.Interpolator loadInterpolator()
-    public static final androidx.datastore.preferences.core.Preferences$Key longKey(java.lang.String)
-    public abstract void onAnimation()
-    public abstract void onChildAttachedToWindow()
-    public static void onPull()
-    public abstract void putBoolean()
-    public abstract void putInt()
-    public abstract void putString()
-    public static java.lang.String readString(java.io.ByteArrayInputStream,int)
-    public static long readUInt32()
-    public static int readUInt8(java.io.InputStream)
-    public static void setLineHeight(android.widget.TextView,int)
-    public static void setPrecomputedText(android.widget.TextView)
-    public abstract void setTargetPosition()
-    public abstract boolean shouldCommit()
-    public abstract void showDialog()
-    public abstract void stop()
-    public static final androidx.datastore.preferences.core.Preferences$Key stringKey(java.lang.String)
-    public static int utf8Length(java.lang.String)
-    public static void w()
-    public static void writeCompressed(java.io.ByteArrayOutputStream,byte[])
-    public static void writeString(java.io.ByteArrayOutputStream,java.lang.String)
-    public static void writeUInt32()
-    public static void writeUInt8(java.io.ByteArrayOutputStream,int)
+androidx.core.widget.EdgeEffectCompat
 androidx.core.widget.ImageViewCompat
 androidx.core.widget.ListViewAutoScrollHelper:
     public final boolean mExclusive
@@ -21147,8 +21519,8 @@ androidx.preference.Preference:
     public final androidx.preference.Preference$OnPreferenceClickListener mOnClickListener
     public boolean mParentDependencyMet
     public final boolean mPersistent
-    public final androidx.core.widget.EdgeEffectCompat mPreferenceDataStore
-    public final androidx.core.widget.EdgeEffectCompat mPreferenceManager
+    public final androidx.core.view.WindowInsetsCompat$Type mPreferenceDataStore
+    public final androidx.core.view.WindowInsetsCompat$Type mPreferenceManager
     public final boolean mSelectable
     public final boolean mShouldDisableView
     public final boolean mSingleLineTitle
@@ -21904,7 +22276,7 @@ androidx.recyclerview.widget.RecyclerView$LayoutManager:
     public int mPrefetchMaxCountObserved
     public boolean mPrefetchMaxObservedInInitialPrefetch
     public boolean mRequestedSimpleAnimations
-    public final androidx.core.widget.EdgeEffectCompat mSmoothScroller
+    public final androidx.core.view.WindowInsetsCompat$Type mSmoothScroller
     public final androidx.recyclerview.widget.RecyclerView$LayoutManager$1 mVerticalBoundCheckCallback
     public int mWidthMode
     public abstract void addDisappearingView()
@@ -22463,7 +22835,19 @@ androidx.vectordrawable.graphics.drawable.AnimatorInflaterCompat
 androidx.vectordrawable.graphics.drawable.ArgbEvaluator:
     public static androidx.vectordrawable.graphics.drawable.ArgbEvaluator getInstance()
 androidx.vectordrawable.graphics.drawable.PathInterpolatorCompat
-androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$1
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$1$$InternalSyntheticThrowCCEIfNotNull$14$cb0f3fda7ba5dfa02bd9e103cbe1d9b8ed8638912a928068a9445442b752f130$0
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$1$$InternalSyntheticThrowCCEIfNotNull$14$cb0f3fda7ba5dfa02bd9e103cbe1d9b8ed8638912a928068a9445442b752f130$1
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$1$$InternalSyntheticThrowCCEIfNotNull$8$5f7d70139bb0f06183876b2c3fc3ec7ed2048cfbef89f502db5aa6ef006866af$0
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$1$$InternalSyntheticThrowCCEIfNotNull$8$c77fc4e16448aedc0eafe11361e87c9710046fe0df995f203528e1e09012af59$0
+androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$1:
+    public static boolean childHasFocus(android.view.View)
+    public static java.lang.String getDataDirectory(android.content.Context)
+    public static java.lang.String getFilesDir(android.content.Context)
+    public static boolean hasSqlLevel()
+    public static boolean isEmpty(java.lang.CharSequence)
+    public static final kotlin.Pair to()
+    public static boolean traverseHierarchy(android.view.View,io.flutter.util.ViewUtils$ViewVisitor)
+    public abstract void waitForCompletion()
 androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$VClipPath:
     public final void inflate()
     public final void updateStateFromTypedArray()
@@ -22911,22 +23295,7 @@ com.tekartik.sqflite.DatabaseWorkerPoolImpl$$InternalSyntheticLambda$4$faa448157
 com.tekartik.sqflite.DatabaseWorkerPoolImpl:
     public static com.tekartik.sqflite.DatabaseWorker createWorker()
     public final synchronized void onWorkerIdle()
-com.tekartik.sqflite.LogLevel$$InternalSyntheticThrowCCEIfNotNull$14$ac0fb3631c6faa7d2a158d224619dec0d337891f08d03d94c035cb23ff76f12d$0
-com.tekartik.sqflite.LogLevel$$InternalSyntheticThrowCCEIfNotNull$14$ac0fb3631c6faa7d2a158d224619dec0d337891f08d03d94c035cb23ff76f12d$1
-com.tekartik.sqflite.LogLevel$$InternalSyntheticThrowCCEIfNotNull$8$4423f7de5868f51ddcf74dd55b07a9eb8699ab73123a6ca13499fa88ed7aaf61$0
-com.tekartik.sqflite.LogLevel$$InternalSyntheticThrowCCEIfNotNull$8$67472b183438ff13fd35e32554a22c891ce10750178ce7642566b7fe6744ad96$0
-com.tekartik.sqflite.LogLevel:
-    public static boolean childHasFocus(android.view.View)
-    public static final java.util.List emptyList()
-    public static java.lang.String getDataDirectory(android.content.Context)
-    public static java.lang.String getFilesDir(android.content.Context)
-    public static boolean hasSqlLevel()
-    public static final void terminateCollectionToArray(int,java.lang.Object[])
-    public static final void throwIndexOverflow()
-    public static final kotlin.Pair to()
-    public static final java.util.Map toSingletonMap(java.util.Map)
-    public static boolean traverseHierarchy(android.view.View,io.flutter.util.ViewUtils$ViewVisitor)
-    public abstract void waitForCompletion()
+com.tekartik.sqflite.LogLevel
 com.tekartik.sqflite.SingleDatabaseWorkerPoolImpl:
     public final void post(com.tekartik.sqflite.DatabaseTask)
 com.tekartik.sqflite.SqflitePlugin$$InternalSyntheticLambda$2$03ec7a25d00bfa842fb519a2688dc7f65405ca5861fd9e90ecf912cbf6589050$0:
@@ -23149,6 +23518,7 @@ io.flutter.embedding.android.FlutterViewDelegate:
     public static java.util.List getCaptionBarInsets()
     public static android.view.WindowInsets getWindowInsets()
 io.flutter.embedding.android.KeyChannelResponder$$InternalSyntheticLambda$1$cf5bb92e2b133ed4958c8cd4422a67f2702c41d504a4d346cc4c4bc1e1bd865e$0:
+    public static java.lang.String getHandlerComponentName()
     public static void onFrameworkResponse()
     public static void run()
     public final boolean run(android.view.View)
@@ -23270,13 +23640,13 @@ io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineService
 io.flutter.embedding.engine.FlutterEngineConnectionRegistry:
     public final android.content.BroadcastReceiver broadcastReceiver
     public final java.util.HashMap broadcastReceiverAwarePlugins
-    public final com.tekartik.sqflite.LogLevel broadcastReceiverPluginBinding
+    public final androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$1 broadcastReceiverPluginBinding
     public final android.content.ContentProvider contentProvider
     public final java.util.HashMap contentProviderAwarePlugins
-    public final com.tekartik.sqflite.LogLevel contentProviderPluginBinding
+    public final androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$1 contentProviderPluginBinding
     public android.app.Service service
     public final java.util.HashMap serviceAwarePlugins
-    public com.tekartik.sqflite.LogLevel servicePluginBinding
+    public androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$1 servicePluginBinding
     public static void attachToActivity()
     public static void destroy()
     public static void detachFromActivityForConfigChanges()
@@ -23406,7 +23776,6 @@ io.flutter.embedding.engine.mutatorsstack.FlutterMutatorsStack$FlutterMutatorTyp
 io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterAssets
 io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding
 io.flutter.embedding.engine.plugins.PluginRegistry
-io.flutter.embedding.engine.plugins.activity.ActivityAware
 io.flutter.embedding.engine.plugins.activity.ActivityControlSurface
 io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding$OnSaveInstanceStateListener
 io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
@@ -23992,10 +24361,6 @@ io.flutter.plugin.text.ProcessTextPlugin:
     public final androidx.appcompat.widget.AppCompatImageHelper processTextChannel
     public static void cacheResolveInfos()
     public static boolean onActivityResult()
-    public final void onAttachedToActivity(io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineActivityPluginBinding)
-    public final void onDetachedFromActivity()
-    public static void onDetachedFromActivityForConfigChanges()
-    public static void onReattachedToActivityForConfigChanges()
 io.flutter.plugins.pathprovider.Messages$FlutterError
 io.flutter.plugins.pathprovider.Messages$PathProviderApi$$InternalSyntheticLambda$3$42d3db6c0da2e6a03c0f2c4157d801fd268e129bea0637c3c7ce1639ea758416$1
 io.flutter.plugins.pathprovider.Messages$PathProviderApi$$InternalSyntheticLambda$3$42d3db6c0da2e6a03c0f2c4157d801fd268e129bea0637c3c7ce1639ea758416$2
@@ -24137,6 +24502,41 @@ io.flutter.plugins.sharedpreferences.SharedPreferencesPlugin:
     public static java.lang.Object getValueByKey()
     public static java.lang.Object readAllKeys()
     public final void setUp()
+io.flutter.plugins.urllauncher.Messages$BrowserOptions:
+    public static java.lang.Boolean getShowTitle()
+    public static void setShowTitle()
+    public static java.util.ArrayList toList()
+io.flutter.plugins.urllauncher.Messages$UrlLauncherApi$$InternalSyntheticLambda$3$c0b5a27905d046280cf32d8abe43b1c9c0ff7400f5104a0dd96eb1db9283ca2f$1
+io.flutter.plugins.urllauncher.Messages$UrlLauncherApi$$InternalSyntheticLambda$3$c0b5a27905d046280cf32d8abe43b1c9c0ff7400f5104a0dd96eb1db9283ca2f$2
+io.flutter.plugins.urllauncher.Messages$UrlLauncherApi$$InternalSyntheticLambda$3$c0b5a27905d046280cf32d8abe43b1c9c0ff7400f5104a0dd96eb1db9283ca2f$3
+io.flutter.plugins.urllauncher.Messages$UrlLauncherApi$$InternalSyntheticLambda$3$c0b5a27905d046280cf32d8abe43b1c9c0ff7400f5104a0dd96eb1db9283ca2f$4
+io.flutter.plugins.urllauncher.Messages$UrlLauncherApi$-CC:
+    public static io.flutter.plugin.common.MessageCodec getCodec()
+io.flutter.plugins.urllauncher.Messages$UrlLauncherApi:
+    public abstract java.lang.Boolean canLaunchUrl(java.lang.String)
+    public abstract void closeWebView()
+    public abstract java.lang.Boolean launchUrl()
+    public abstract java.lang.Boolean openUrlInApp(java.lang.String,java.lang.Boolean,io.flutter.plugins.urllauncher.Messages$WebViewOptions,io.flutter.plugins.urllauncher.Messages$BrowserOptions)
+    public abstract java.lang.Boolean supportsCustomTabs()
+io.flutter.plugins.urllauncher.Messages$WebViewOptions:
+    public static java.lang.Boolean getEnableDomStorage()
+    public static java.lang.Boolean getEnableJavaScript()
+    public static java.util.Map getHeaders()
+    public static void setEnableDomStorage()
+    public static void setEnableJavaScript()
+    public static void setHeaders()
+    public static java.util.ArrayList toList()
+io.flutter.plugins.urllauncher.Messages
+io.flutter.plugins.urllauncher.UrlLauncher$$InternalSyntheticLambda$2$3c46b941b5a23b65a1c4f3cbd2286da0941eb7e183743b7de5b59ba3e26a51d5$0
+io.flutter.plugins.urllauncher.UrlLauncher$IntentResolver
+io.flutter.plugins.urllauncher.UrlLauncher:
+    public static final synthetic boolean $assertionsDisabled
+    public static void <clinit>()
+    public final void closeWebView()
+    public final void ensureActivity()
+    public final java.lang.Boolean launchUrl()
+    public static void setActivity()
+io.flutter.plugins.urllauncher.WebViewActivity$FlutterWebChromeClient$1
 io.flutter.util.HandlerCompat
 io.flutter.util.PathUtils
 io.flutter.util.Preconditions
@@ -24396,7 +24796,34 @@ kotlin.collections.ArrayDeque:
     public static java.lang.Object removeFirstOrNull()
 kotlin.collections.ArraysKt
 kotlin.collections.ArraysKt__ArraysJVMKt
-kotlin.collections.ArraysKt__ArraysKt
+kotlin.collections.ArraysKt__ArraysKt:
+    public static final java.lang.Boolean boxBoolean()
+    public static final java.lang.Integer boxInt()
+    public static final int coerceAtLeast()
+    public static final int coerceAtMost()
+    public static final long coerceAtMost()
+    public static final int differenceModulo(int,int,int)
+    public static final long differenceModulo(long,long,long)
+    public static final kotlin.ranges.IntProgression downTo(int,int)
+    public static final java.util.List emptyList()
+    public static final java.util.Set emptySet()
+    public static final void enumEntries(java.lang.Enum[])
+    public static java.lang.Object fold()
+    public static final java.lang.Object getCOROUTINE_SUSPENDED()
+    public static final void getKotlinClass(java.lang.Class)
+    public static void mark()
+    public static final int mod()
+    public static final long mod(long,long)
+    public static kotlin.coroutines.CoroutineContext plus()
+    public static final kotlin.coroutines.Continuation probeCoroutineCreated()
+    public static final void probeCoroutineSuspended()
+    public static final void resetAt(int,java.lang.Object[])
+    public static final void resetRange(int,int,java.lang.Object[])
+    public static java.lang.Throwable sanitizeStackTrace()
+    public static final java.util.Set setOf(java.lang.Object)
+    public static final void terminateCollectionToArray(int,java.lang.Object[])
+    public static final void throwIndexOverflow()
+    public static final java.util.Map toSingletonMap(java.util.Map)
 kotlin.collections.ArraysKt___ArraysJvmKt
 kotlin.collections.ArraysKt___ArraysKt:
     public static final java.util.List asList(java.lang.Object[])
@@ -24450,39 +24877,7 @@ kotlin.collections.MapsKt___MapsJvmKt
 kotlin.collections.MapsKt___MapsKt
 kotlin.collections.SetsKt
 kotlin.collections.SetsKt__SetsJVMKt
-kotlin.collections.SetsKt__SetsKt:
-    public static final long access$durationOfMillis(long)
-    public static final java.lang.Boolean boxBoolean()
-    public static final java.lang.Integer boxInt()
-    public static final int coerceAtLeast()
-    public static final int coerceAtMost()
-    public static final long coerceAtMost()
-    public static final int differenceModulo(int,int,int)
-    public static final long differenceModulo(long,long,long)
-    public static final kotlin.ranges.IntProgression downTo(int,int)
-    public static final java.util.Set emptySet()
-    public static final void enumEntries(java.lang.Enum[])
-    public static java.lang.Object fold()
-    public static final java.lang.Object getCOROUTINE_SUSPENDED()
-    public static final void getKotlinClass(java.lang.Class)
-    public static void mark()
-    public static final int mod()
-    public static final long mod(long,long)
-    public abstract long nanoTime()
-    public abstract void parkNanos()
-    public static kotlin.coroutines.CoroutineContext plus()
-    public static final kotlin.coroutines.Continuation probeCoroutineCreated()
-    public static final void probeCoroutineSuspended()
-    public abstract void registerTimeLoopThread()
-    public static final void resetAt(int,java.lang.Object[])
-    public static final void resetRange(int,int,java.lang.Object[])
-    public static java.lang.Throwable sanitizeStackTrace()
-    public static final java.util.Set setOf(java.lang.Object)
-    public abstract void trackTask()
-    public abstract void unTrackTask()
-    public abstract void unpark()
-    public abstract void unregisterTimeLoopThread()
-    public abstract java.lang.Runnable wrapTask()
+kotlin.collections.SetsKt__SetsKt
 kotlin.collections.SetsKt___SetsKt
 kotlin.collections.builders.ListBuilder$Companion
 kotlin.collections.builders.ListBuilder:
@@ -24731,7 +25126,40 @@ kotlin.time.DurationJvmKt:
     public static final boolean durationAssertionsEnabled
     public static final java.lang.ThreadLocal[] precisionFormats
     public static final boolean getDurationAssertionsEnabled()
-kotlin.time.DurationKt
+kotlin.time.DurationKt$$InternalSyntheticThrowCCEIfNotNull$16$682eb4e893951c03e5d4c4384cc8fbcfa3897760a14cd16e9a61d442e5591610$0
+kotlin.time.DurationKt$$InternalSyntheticThrowCCEIfNotNull$214$8da2f5c577fca7cd65ce07fdd2272ab0bec7b84ec5107b8f7e49fdbb5c7392a4$0
+kotlin.time.DurationKt$$InternalSyntheticThrowCCEIfNotNull$214$8da2f5c577fca7cd65ce07fdd2272ab0bec7b84ec5107b8f7e49fdbb5c7392a4$1
+kotlin.time.DurationKt:
+    public static final java.util.concurrent.CancellationException CancellationException(java.lang.String,java.lang.Throwable)
+    public static kotlinx.coroutines.CompletableDeferredImpl CompletableDeferred$default()
+    public static final kotlinx.coroutines.internal.ContextScope CoroutineScope(kotlin.coroutines.CoroutineContext)
+    public static final long access$durationOfMillis(long)
+    public static final void cancel(kotlin.coroutines.CoroutineContext,java.util.concurrent.CancellationException)
+    public static synthetic void cancel$default(kotlinx.coroutines.Job)
+    public static final void cancelConsumed(kotlinx.coroutines.channels.ReceiveChannel,java.lang.Throwable)
+    public static final java.lang.Object coroutineScope(kotlin.jvm.functions.Function2,kotlin.coroutines.Continuation)
+    public static final void disposeOnCancellation(kotlinx.coroutines.CancellableContinuationImpl,kotlinx.coroutines.DisposableHandle)
+    public static final kotlinx.coroutines.flow.FlowKt__LimitKt$dropWhile$$inlined$unsafeFlow$1 dropWhile(kotlin.jvm.functions.Function2,kotlinx.coroutines.flow.Flow)
+    public static final void ensureActive(kotlinx.coroutines.Job)
+    public static final void ensureActive(kotlinx.coroutines.flow.FlowCollector)
+    public static final kotlinx.coroutines.flow.Flow flow()
+    public static final java.lang.String getCoroutineName()
+    public static final java.lang.Throwable handlerException(java.lang.Throwable,java.lang.Throwable)
+    public static final boolean hasCopyableElements(kotlin.coroutines.CoroutineContext)
+    public static final boolean isCancellableMode(int)
+    public abstract long nanoTime()
+    public static final kotlin.coroutines.CoroutineContext newCoroutineContext(kotlin.coroutines.CoroutineContext,kotlin.coroutines.CoroutineContext)
+    public static final kotlin.coroutines.CoroutineContext newCoroutineContext(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.CoroutineContext)
+    public abstract void parkNanos()
+    public abstract void registerTimeLoopThread()
+    public static final java.lang.Object toState(java.lang.Object,kotlin.jvm.functions.Function1)
+    public static java.lang.Object toState$default(java.lang.Object)
+    public abstract void trackTask()
+    public static final kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest transformLatest(kotlinx.coroutines.flow.Flow,kotlin.jvm.functions.Function3)
+    public abstract void unTrackTask()
+    public abstract void unpark()
+    public abstract void unregisterTimeLoopThread()
+    public abstract java.lang.Runnable wrapTask()
 kotlin.time.DurationUnit:
     public static final synthetic kotlin.enums.EnumEntries $ENTRIES
     public static final enum kotlin.time.DurationUnit DAYS
@@ -24748,31 +25176,7 @@ kotlinx.coroutines.AbstractTimeSourceKt
 kotlinx.coroutines.BlockingCoroutine:
     public static java.lang.Object joinBlocking()
 kotlinx.coroutines.BuildersKt
-kotlinx.coroutines.BuildersKt__BuildersKt$$InternalSyntheticThrowCCEIfNotNull$16$95acf0ce05ad8d48731b836d6497f71b9500458d676a8af7d975fedc93e684ed$0
-kotlinx.coroutines.BuildersKt__BuildersKt$$InternalSyntheticThrowCCEIfNotNull$214$3162f378acc4a98d4a75a189ce03e10f263d9e9575f018e730518b2211c5d185$0
-kotlinx.coroutines.BuildersKt__BuildersKt$$InternalSyntheticThrowCCEIfNotNull$214$3162f378acc4a98d4a75a189ce03e10f263d9e9575f018e730518b2211c5d185$1
-kotlinx.coroutines.BuildersKt__BuildersKt:
-    public static final java.util.concurrent.CancellationException CancellationException(java.lang.String,java.lang.Throwable)
-    public static kotlinx.coroutines.CompletableDeferredImpl CompletableDeferred$default()
-    public static final kotlinx.coroutines.internal.ContextScope CoroutineScope(kotlin.coroutines.CoroutineContext)
-    public static final void cancel(kotlin.coroutines.CoroutineContext,java.util.concurrent.CancellationException)
-    public static synthetic void cancel$default(kotlinx.coroutines.Job)
-    public static final void cancelConsumed(kotlinx.coroutines.channels.ReceiveChannel,java.lang.Throwable)
-    public static final java.lang.Object coroutineScope(kotlin.jvm.functions.Function2,kotlin.coroutines.Continuation)
-    public static final void disposeOnCancellation(kotlinx.coroutines.CancellableContinuationImpl,kotlinx.coroutines.DisposableHandle)
-    public static final kotlinx.coroutines.flow.FlowKt__LimitKt$dropWhile$$inlined$unsafeFlow$1 dropWhile(kotlin.jvm.functions.Function2,kotlinx.coroutines.flow.Flow)
-    public static final void ensureActive(kotlinx.coroutines.Job)
-    public static final void ensureActive(kotlinx.coroutines.flow.FlowCollector)
-    public static final kotlinx.coroutines.flow.Flow flow()
-    public static final java.lang.String getCoroutineName()
-    public static final java.lang.Throwable handlerException(java.lang.Throwable,java.lang.Throwable)
-    public static final boolean hasCopyableElements(kotlin.coroutines.CoroutineContext)
-    public static final boolean isCancellableMode(int)
-    public static final kotlin.coroutines.CoroutineContext newCoroutineContext(kotlin.coroutines.CoroutineContext,kotlin.coroutines.CoroutineContext)
-    public static final kotlin.coroutines.CoroutineContext newCoroutineContext(kotlinx.coroutines.CoroutineScope,kotlin.coroutines.CoroutineContext)
-    public static final java.lang.Object toState(java.lang.Object,kotlin.jvm.functions.Function1)
-    public static java.lang.Object toState$default(java.lang.Object)
-    public static final kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest transformLatest(kotlinx.coroutines.flow.Flow,kotlin.jvm.functions.Function3)
+kotlinx.coroutines.BuildersKt__BuildersKt
 kotlinx.coroutines.BuildersKt__Builders_commonKt
 kotlinx.coroutines.CancelHandler:
     private static void $r8$constructor$kotlinx$coroutines$CancelHandlerBase()
@@ -24875,11 +25279,9 @@ kotlinx.coroutines.DebugStringsKt:
     public static void applyTheme()
     public static boolean canApplyTheme()
     public abstract void cancel()
-    public static int captionBar()
     public static void checkArgumentNonnegative(int)
     public static java.lang.Object checkNotNull()
     public static android.graphics.Path createPathFromPathData(java.lang.String)
-    public static int displayCutout()
     public static boolean equals()
     public static int getAbsoluteGravity()
     public static int getAlpha()
@@ -24894,14 +25296,11 @@ kotlinx.coroutines.DebugStringsKt:
     public static java.lang.CharSequence[] getTextArray(android.content.res.TypedArray,int,int)
     public static int growSize(int)
     public static varargs int hash()
-    public static int ime()
-    public static int indexOf()
     public static void inflate()
     public static boolean isAutoMirrored()
     public static boolean isFromSource(int,android.view.MotionEvent)
     public static void jumpToCurrentState()
-    public static int mandatorySystemGestures()
-    public static int navigationBars()
+    public static int noteProxyOpNoThrow(android.content.Context,java.lang.String,java.lang.String)
     public abstract void onBackPressed()
     public static void onCreateInputConnection(android.view.inputmethod.InputConnection,android.view.inputmethod.EditorInfo,android.view.View)
     public static android.graphics.Shader$TileMode parseTileMode(int)
@@ -24909,9 +25308,6 @@ kotlinx.coroutines.DebugStringsKt:
     public static void setAutoMirrored()
     public static void setHotspot()
     public static void setHotspotBounds()
-    public static int statusBars()
-    public static int systemGestures()
-    public static int tappableElement()
     public static java.util.ArrayList toByteArrayList(java.lang.String[])
 kotlinx.coroutines.DefaultExecutor:
     public final synchronized java.lang.Thread createThreadSync()
@@ -25296,19 +25692,7 @@ kotlinx.coroutines.flow.FlowKt__BuildersKt$flowOf$$inlined$unsafeFlow$2:
     public static java.lang.Object collectSafely()
 kotlinx.coroutines.flow.FlowKt__BuildersKt
 kotlinx.coroutines.flow.FlowKt__ChannelsKt
-kotlinx.coroutines.flow.FlowKt__CollectKt
-kotlinx.coroutines.flow.FlowKt__ContextKt
-kotlinx.coroutines.flow.FlowKt__DistinctKt$defaultAreEquivalent$1
-kotlinx.coroutines.flow.FlowKt__DistinctKt$defaultKeySelector$1
-kotlinx.coroutines.flow.FlowKt__DistinctKt
-kotlinx.coroutines.flow.FlowKt__EmittersKt
-kotlinx.coroutines.flow.FlowKt__LimitKt$takeWhile$$inlined$unsafeFlow$1
-kotlinx.coroutines.flow.FlowKt__LimitKt
-kotlinx.coroutines.flow.FlowKt__MergeKt$mapLatest$1:
-    public final java.lang.Object invoke$16()
-kotlinx.coroutines.flow.FlowKt__MergeKt:
-    public static final int DEFAULT_CONCURRENCY
-kotlinx.coroutines.flow.FlowKt__ReduceKt:
+kotlinx.coroutines.flow.FlowKt__CollectKt:
     public static final void callUndeliveredElement(kotlin.jvm.functions.Function1,java.lang.Object,kotlin.coroutines.CoroutineContext)
     public static synthetic androidx.startup.StartupException callUndeliveredElementCatchingException$default(kotlin.jvm.functions.Function1,java.lang.Object)
     public static final void checkOwnership()
@@ -25323,6 +25707,18 @@ kotlinx.coroutines.flow.FlowKt__ReduceKt:
     public static final boolean systemProp(java.lang.String,boolean)
     public static synthetic long systemProp$default(java.lang.String,long)
     public static synthetic void unlock$default(kotlinx.coroutines.sync.MutexImpl)
+kotlinx.coroutines.flow.FlowKt__ContextKt
+kotlinx.coroutines.flow.FlowKt__DistinctKt$defaultAreEquivalent$1
+kotlinx.coroutines.flow.FlowKt__DistinctKt$defaultKeySelector$1
+kotlinx.coroutines.flow.FlowKt__DistinctKt
+kotlinx.coroutines.flow.FlowKt__EmittersKt
+kotlinx.coroutines.flow.FlowKt__LimitKt$takeWhile$$inlined$unsafeFlow$1
+kotlinx.coroutines.flow.FlowKt__LimitKt
+kotlinx.coroutines.flow.FlowKt__MergeKt$mapLatest$1:
+    public final java.lang.Object invoke$16()
+kotlinx.coroutines.flow.FlowKt__MergeKt:
+    public static final int DEFAULT_CONCURRENCY
+kotlinx.coroutines.flow.FlowKt__ReduceKt
 kotlinx.coroutines.flow.FlowKt__ShareKt$launchSharing$1$1:
     public final int label
     public static java.lang.Object invoke$17()
